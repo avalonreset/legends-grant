@@ -1,0 +1,4 @@
+# Personal run data never ships to the public repo.
+profiles/
+opportunities/
+*.log
