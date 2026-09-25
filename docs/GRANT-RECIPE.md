@@ -1,8 +1,3 @@
----
-name: legends-grant
-description: Find, qualify, and apply for US business grants. Federal APIs first, state programs second, private rolling third. Use for any business grant request.
----
-
 # legends-grant
 
 Start here for any business grant request. Markdown first. No runner, no MCP

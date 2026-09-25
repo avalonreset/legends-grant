@@ -6,9 +6,13 @@ search live grant sources, match them against your vault-mapped business,
 draft the package, and submit where the channel allows once you authorize
 that exact send.
 
-Part of the [CTO Legends](https://github.com/avalonreset/cto-legends)
-ecosystem. Install it with `cto-legends install legends-grant`, or use
-this repo standalone: `SKILL.md` is the agent entry point.
+## Agent setup (via `cto-legends`)
+
+Part of the [CTO Legends](https://github.com/avalonreset/cto-legends) ecosystem. `cto-legends` is the only registered skill; this repo vendors a pinned copy at `skills/cto-legends/SKILL.md`.
+
+Install with `cto-legends install legends-grant`, then follow the module recipe the router loads. Do not register this module as its own skill.
+
+Standalone use: `docs/GRANT-RECIPE.md` is the agent entry point.
 
 ## Why this beats asking an agent for grants
 
@@ -36,7 +40,7 @@ Dead programs are marked dead (FedEx retired, Comcast RISE formless).
 
 ## Repo layout
 
-- `SKILL.md`: agent entry point and routing
+- `docs/GRANT-RECIPE.md`: agent entry point and routing
 - `find.md`, `match.md`, `qualify.md`, `apply.md`: the four working lanes
 - `submit-lanes.md`: agent-agnostic submission contract (any harness)
 - `vault-map.md`: plug vault-mapped businesses and client portfolios in
