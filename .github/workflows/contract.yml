@@ -18,8 +18,6 @@ name: contract
 
 on:
   push:
-    tags:
-      - "v*"
   pull_request:
 
 jobs:

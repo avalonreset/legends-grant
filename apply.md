@@ -4,7 +4,9 @@ Build the package and submit where allowed.
 
 ## Build
 
-1. Confirm the opportunity note verdict is eligible or likely-with-plan.
+1. Review the current qualification and unresolved requirements. Drafts may be
+   prepared while facts are missing, but label their gaps and never treat a
+   likely fit as funder approval or a submission-ready package.
 2. Confirm submission authorization: which opportunity, which channel,
    whose credentials, what gets sent. No authorization, no send.
 3. Draft: narrative answers, budget table, use-of-funds statement,

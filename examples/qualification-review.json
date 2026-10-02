@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "opportunity": {
+    "id": "synthetic-2030",
+    "record_type": "opportunity",
+    "status": "open",
+    "instrument": "grant",
+    "access": "open",
+    "deadline": "2030-11-01T17:00:00-04:00",
+    "citations": {
+      "record_type": [
+        {
+          "document_id": "notice",
+          "quote": "This is a competitive grant opportunity.",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ],
+      "status": [
+        {
+          "document_id": "notice",
+          "quote": "Applications are open",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ],
+      "instrument": [
+        {
+          "document_id": "notice",
+          "quote": "competitive grant",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ],
+      "access": [
+        {
+          "document_id": "notice",
+          "quote": "Public applications are accepted.",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ],
+      "deadline": [
+        {
+          "document_id": "notice",
+          "quote": "Deadline: 2030-11-01T17:00:00-04:00.",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ]
+    }
+  },
+  "documents": [
+    {
+      "id": "notice",
+      "url": "https://example.org/synthetic-notice",
+      "kind": "notice",
+      "authoritative": true,
+      "retrieved_at": "2030-10-01T12:00:00Z",
+      "text": "SYNTHETIC EXAMPLE ONLY. This is a competitive grant opportunity. Applications are open to eligible Pennsylvania nonprofits. Deadline: 2030-11-01T17:00:00-04:00. Public applications are accepted. Eligible applicants must be nonprofit organizations located in Pennsylvania. At least $5000 cash match is required. Submit a project narrative and budget. No attachments or amendments apply to this synthetic example.",
+      "sha256": "24c20ddc6a16ded52575637108d713ca41c6dc8a74c2d77714fe595a52577dc0",
+      "reviewed_sha256": "24c20ddc6a16ded52575637108d713ca41c6dc8a74c2d77714fe595a52577dc0"
+    }
+  ],
+  "inventory": {
+    "required_document_ids": [
+      "notice"
+    ],
+    "complete": true,
+    "all_rules_reviewed": true,
+    "amendments_checked_at": "2030-10-01T12:00:00Z",
+    "max_age_days": 7,
+    "conflicts": []
+  },
+  "requirements": [
+    {
+      "id": "entity",
+      "description": "must be nonprofit organizations",
+      "fact_key": "entity_type",
+      "operator": "equals",
+      "expected": "nonprofit",
+      "decision": "pass",
+      "citations": [
+        {
+          "document_id": "notice",
+          "quote": "must be nonprofit organizations",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ]
+    },
+    {
+      "id": "geography",
+      "description": "located in Pennsylvania",
+      "fact_key": "state",
+      "operator": "one_of",
+      "expected": [
+        "PA"
+      ],
+      "decision": "pass",
+      "citations": [
+        {
+          "document_id": "notice",
+          "quote": "located in Pennsylvania",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ]
+    },
+    {
+      "id": "match",
+      "description": "At least $5000 cash match is required.",
+      "fact_key": "cash_match",
+      "operator": "at_least",
+      "expected": 5000,
+      "decision": "pass",
+      "citations": [
+        {
+          "document_id": "notice",
+          "quote": "At least $5000 cash match is required.",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ]
+    }
+  ],
+  "application_requirements": [
+    {
+      "id": "project-narrative",
+      "description": "Prepare project narrative",
+      "citations": [
+        {
+          "document_id": "notice",
+          "quote": "Submit a project narrative and budget.",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "description": "Prepare budget",
+      "citations": [
+        {
+          "document_id": "notice",
+          "quote": "Submit a project narrative and budget.",
+          "locator": "Synthetic notice, paragraph 1"
+        }
+      ]
+    }
+  ]
+}

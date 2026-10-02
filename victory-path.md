@@ -5,10 +5,11 @@ no with reasons. Seven steps, each with a receipt. Skip none.
 
 1. MAP: vault business note to `profiles/<slug>.md` (`vault-map.md`).
    Receipt: filled profile with vault citations + Updated date.
-2. SWEEP: Tier 1 APIs, then state file, then private rolling (`find.md`).
-   Receipt: ranked shortlist with scores (`match.md`).
+2. SEARCH: choose federal, state, local, tribal and private sources by applicant
+   and project (`find.md`); no mandatory source order.
+   Receipt: source coverage, partial/blocked searches and sourced candidates.
 3. GATE: eligibility verdict per top candidate (`qualify.md`).
-   Receipt: eligible / likely + open question / out + notice quote.
+   Receipt: excluded / needs verification / requirements checked, with evidence.
 4. NOTE: one opportunity note per real candidate.
    Receipt: note with source URL + retrieved date + channel + next action.
 5. BUILD: package per `apply.md` (narrative, budget, attachments).

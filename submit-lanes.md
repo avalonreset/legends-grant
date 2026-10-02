@@ -18,7 +18,8 @@ surfaces) are instances, not the interface.
 ## Authorization gates (every submission)
 
 1. Name the exact opportunity, channel, credential owner, and payload.
-2. Get Benjamin's GO for that send. One GO covers one send, not a season.
+2. Obtain the applicant's authorized representative's approval for that send.
+   One approval covers one send, not a season.
 3. After: record what was sent, where, when, plus receipt (confirmation
    page, email ack, tracking number). Receipt or it did not happen.
 

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legends-grant-evidence"
+dynamic = ["version"]
+description = "US grant discovery, public evidence, and reviewed qualification"
+requires-python = ">=3.11"
+dependencies = []
+readme = "README.md"
+license = "MIT"
+
+[project.optional-dependencies]
+pdf = ["pypdf>=6,<7"]
+
+[project.scripts]
+grant-engine = "grant_engine.__main__:main"
+
+[tool.setuptools]
+packages = ["grant_engine", "grant_engine.data"]
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}
+
+[tool.setuptools.package-data]
+grant_engine = ["data/*.json"]

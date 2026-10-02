@@ -1,10 +1,74 @@
-# legends-grant: agentically assisted business grant finding and application
+# legends-grant
 
-Markdown-driven Legends module for finding, qualifying, and applying for
-US business grants. Your agent does as much of the work as possible:
-search live grant sources, match them against your vault-mapped business,
-draft the package, and submit where the channel allows once you authorize
-that exact send.
+An agent-assisted US grant discovery, evidence and application workflow.
+Scope includes businesses, nonprofits, governments, tribes, researchers and
+individuals, across federal, state, local and private funding. Source selection
+follows the applicant and project, with no mandatory federal-first search.
+
+## What v0.2.0 does
+
+- A researched nationwide source registry, including all 50 states, DC and five
+  territories. Registry coverage is not exhaustive opportunity coverage.
+- Source planning, including explicit research tasks for sources without adapters.
+- Bounded public Grants.gov search and detail retrieval.
+- Public CommonGrants discovery from four vetted third-party state feeds:
+  California, Pennsylvania, Washington and Maryland.
+- A local SQLite evidence store with immutable revisions, collection receipts,
+  export, replay and integrity checks.
+- Offline keyword search across collected evidence, with visible status,
+  source authority and freshness warnings.
+- Bounded collection of explicit public HTTPS notices and attachments, saved
+  bytes, extracted text, link inventory and offline artifact verification.
+- Evidence-linked review of agent-prepared requirements against separate
+  applicant facts, with conservative unresolved results and an application checklist.
+- Comparison of evidence exports to flag changes for re-review.
+
+The agent chooses sources, reads governing terms and prepares the review.
+The runtime does not autonomously discover every grant, extract every eligibility
+rule, guarantee qualification, or submit applications. State feeds require official
+notice verification. A successful document download does not prove the notice
+inventory is complete. No paid provider or Alexandria dependency is required.
+
+## Try it
+
+Python 3.11 or newer; core runtime uses only the standard library. From this directory:
+
+```powershell
+python -m pip install .
+python -m grant_engine doctor
+python -m grant_engine plan --jurisdiction TX --applicant-type nonprofit --purpose housing
+python -m grant_engine discover grants-gov --query workforce --limit 3 --output federal-sample.json
+python -m grant_engine discover common-grants --base-url https://ca.api.cg.a6lab.ai --source-id commongrants-ca --limit 3 --output ca-sample.json
+python -m grant_engine ingest --db evidence.sqlite --input federal-sample.json
+python -m grant_engine ingest --db evidence.sqlite --input ca-sample.json
+python -m grant_engine report --db evidence.sqlite
+python -m grant_engine search --db evidence.sqlite --query workforce --status open
+python -m grant_engine check --db evidence.sqlite
+python -m unittest discover -s tests -v
+```
+
+The installed CLI works outside this checkout; the source registry is bundled.
+Install `.[pdf]` to enable PDF text extraction with pypdf. Without that extra,
+PDF bytes are preserved and the missing text-extraction capability is reported.
+Scanned PDFs still require separate OCR. Recipes and research references ship in
+the source distribution and router installation; the wheel supplies the runtime.
+
+`--limit` bounds retrieval. Successful limited calls do not mean a source is fully
+collected. Store only public opportunity evidence in this database, never client
+profiles or credentials. See [runtime guide](docs/RUNTIME.md).
+
+## Agent workflow and product direction
+
+- [Agent entry point](docs/GRANT-RECIPE.md)
+- [Nationwide architecture and build plan](docs/NATIONWIDE-DESIGN.md)
+- [Sources and professional discovery methods](docs/SOURCE-RESEARCH.md)
+- [Coverage and known gaps](docs/COVERAGE.md)
+- [Verification receipt](docs/VERIFICATION.md)
+- [Independent battle test](docs/BATTLE-TEST-2026-10-02.md)
+- [Search](find.md), [match](match.md), [qualify](qualify.md), [apply](apply.md)
+
+Applicant context can come from `legends-empire` or another authorized source.
+Keep each client's private facts separate from shared public grant evidence.
 
 ## Agent setup (via `cto-legends`)
 
@@ -12,54 +76,9 @@ Part of the [CTO Legends](https://github.com/avalonreset/cto-legends) ecosystem.
 
 Install with `cto-legends install legends-grant`, then follow the module recipe the router loads. Do not register this module as its own skill.
 
-Standalone use: `docs/GRANT-RECIPE.md` is the agent entry point.
+Preview and apply installation through the router. Existing users first run
+`cto-legends sync`, apply the reviewed catalog update, then preview and apply
+`cto-legends update legends-grant`. Keep evidence and private client work outside
+the replaceable installation directory.
 
-## Why this beats asking an agent for grants
-
-A generic ask returns a link list. legends-grant returns a sourced,
-qualified, submittable answer:
-
-1. MAP your vault-mapped business (or each client) to a profile once.
-2. SWEEP federal APIs first, state programs second, private rolling third.
-3. SCORE every candidate 0-12 with the math shown.
-4. GATE each top pick against the live notice text, quoted, not guessed.
-5. BUILD the narrative, budget, and attachments.
-6. SEND once per authorization, receipt or it did not happen.
-7. TRACK award windows and reporting duties.
-
-A run that ends in honest OUTs is still a victory: it spent an hour, not
-six weeks, and the notes stay warm for the next round.
-
-## Live sources, verified
-
-Federal no-key APIs: grants.gov search2 + fetchOpportunity, NIH Guide,
-NIH RePORTER, USAspending. Key-gated: SAM.gov Assistance Listings and
-Opportunities v2. Structured: SBA STEP, USDA RBDG, EDA, MBDA, 50-state
-index. Private rolling: Hello Alice, IFundWomen, Amber, NASE, Verizon.
-Dead programs are marked dead (FedEx retired, Comcast RISE formless).
-
-## Repo layout
-
-- `docs/GRANT-RECIPE.md`: agent entry point and routing
-- `find.md`, `match.md`, `qualify.md`, `apply.md`: the four working lanes
-- `submit-lanes.md`: agent-agnostic submission contract (any harness)
-- `vault-map.md`: plug vault-mapped businesses and client portfolios in
-- `sources.md`, `federal.md`, `private-rolling.md`, `veteran.md`: registry
-- `states/`: 50-state index plus live state files
-- `glossary.md`, `victory-path.md`: plain-English terms, 7-step checklist
-- `bin/lg-selftest.sh`: no-key federal lane self-test
-- `test/fixtures/`: five business archetypes for battle-testing
-
-Personal run data (`profiles/`, `opportunities/`) never ships: see
-`.gitignore`. One profile per business, one note per opportunity, every
-claim with source plus retrieved date.
-
-## Self-test
-
-```sh
-bash bin/lg-selftest.sh
-```
-
-## License
-
-MIT. See LICENSE.
+MIT. See [LICENSE](LICENSE).

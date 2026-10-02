@@ -1,49 +1,52 @@
 # legends-grant
 
-Start here for any business grant request. Markdown first. No runner, no MCP
-server, no background service. Read the lane file the task needs and follow it.
+Agent entry point for US grant discovery and application work. Run
+`python -m grant_engine doctor` using the module runtime before collection.
+This checks local readiness; it makes no live provider requests.
 
-## Route the request
+## Route the task
 
-- New search: read `vault-map.md` for the business, then `find.md`, `match.md`, `sources.md`, `federal.md`.
-- State specific: read `states/_Index.md`, then that state file.
-- Private and corporate: read `private-rolling.md`.
-- Eligibility question: read `qualify.md` before writing anything.
-- Application work: read `apply.md` plus `submit-lanes.md`. Confirm what submission means
-  (agent submits vs human submits) before sending anything anywhere.
+- New search: `vault-map.md`, `find.md`, `grant_engine/data/us-sources.json`, then `match.md`.
+- Nationwide product work: `docs/NATIONWIDE-DESIGN.md`, `docs/SOURCE-RESEARCH.md`
+  and `docs/COVERAGE.md`.
+- Run collection: `docs/RUNTIME.md`. Choose sources by applicant and purpose.
+- Eligibility: `qualify.md`; verify current official notices and attachments.
+- Applications: `apply.md` and `submit-lanes.md`. Draft within the request;
+  submission requires authorization for that external action and a receipt.
 
-## Search order (always)
+No federal-first ordering. Federal, state, local, tribal and private sources
+can all be the first useful route. Existing `states/` notes are background;
+the researched machine-readable registry is `grant_engine/data/us-sources.json`.
 
-1. Tier 1, API direct: grants.gov search2 plus fetchOpportunity, SAM.gov
-   Assistance Listings, SAM daily CSV, NIH Guide, NSF, USAspending, SBIR.
-2. Tier 2, structured pages: SBA, STEP, USDA RBDG, EDA, MBDA, SBDC,
-   state economic development portals.
-3. Tier 3, browser assisted: GrantWatch, Instrumentl, Foundation Directory,
-   JS-gated state and local portals. Browser work goes through the house
-   browser path, one job per tab, glass before claiming anything.
+## Intake and evidence
 
-## Intake (ask once, then work)
+Use authorized `legends-empire` context or the applicant's named source. Obtain
+entity type, project geography, purpose, beneficiaries, amount, timing and cash
+constraints. Ownership, size, registrations and other details are requested
+when a candidate's actual requirements make them relevant. Do not require an
+individual or nonprofit to invent business identifiers.
 
-Collect before searching: legal name, entity type, state, NAICS, employee
-count plus revenue (size gate), ownership categories (woman, veteran,
-minority, rural), use of funds, amount needed, deadline pressure. Use
-`business-profile-template.md`. Never invent intake facts.
+Keep private profiles separate from the public evidence store. Store source
+and retrieval dates, distinguish official and third-party evidence, preserve
+unknowns and keep revisions. A search snippet, API success or open status does
+not establish eligibility. Prior awards do not establish an open competition.
 
-## Opportunity notes
+## Tools without overclaiming
 
-One file per real opportunity from `opportunity-note-template.md`. Record:
-source URL, retrieved date, deadline, eligibility verdict, amount, cost share,
-submission channel (API, portal upload, email, mail), and next action.
-Update the note instead of duplicating it.
+The CLI plans sources, retrieves bounded public records, searches local evidence,
+collects explicit public documents, verifies artifacts, compares snapshots and
+evaluates reviewed rules. Research, rule extraction, clause interpretation,
+notice completeness and final application decisions remain agent work.
+No scheduler or automatic submission service is installed. Alexandria is not a dependency.
 
-## Submission rule
+Use `collect-document` for the current notice and each required attachment or
+amendment. Inspect the link inventory; it is not proof that all governing files
+were found. Confirm the authoritative document set independently, then prepare
+the review described in `docs/QUALIFICATION.md`. Keep private facts and review
+outputs outside the public Store. Never convert unknowns into assumed passes.
 
-Max automation, explicit authorization. Agent may draft, fill, assemble,
-upload, and submit once Benjamin authorizes that exact submission. Human
-owns: mailed packages, wet signatures, in-person steps, non-delegable logins.
-State the channel and what was sent after every submission. Never claim a
-submission without a receipt (confirmation page, email, tracking number).
+For unimplemented sources, execute the planner's research tasks using available
+web/browser tools, follow official documents, and report blocked access. Do not
+bypass access controls or assume a vendor API permits bulk storage.
 
-## Writing style
-
-Plain punctuation. No em dashes in generated copy.
+Use plain punctuation; no em dashes in generated public copy.

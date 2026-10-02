@@ -19,5 +19,6 @@ State hub. Retrieved 2026-09-24. Next recheck on first application GO.
 ## Notes
 
 - Microgrant tiers scale with revenue; $0 revenue + PA tax filing status must be confirmed against next round's floor. Priority language targets historically disadvantaged businesses.
-- Main Street Matters is INDIRECT: Benjamin's leverage is via Norristown/Montgomery County corridors, not a direct application.
+- Main Street Matters can benefit businesses indirectly through eligible local
+  administrators; verify the current notice before choosing an applicant role.
 - First money moves now: BASC counseling (free, strengthens every later app) + NASE + Hello Alice profile + Verizon Digital Ready.

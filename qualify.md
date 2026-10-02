@@ -1,23 +1,30 @@
 # qualify
 
-Eligibility gate. Run before any application writing.
+Verify the current official notice, attachments and amendments before application
+work. The agent identifies and interprets rules; `grant_engine review` can check
+explicit reviewed rules against separate applicant facts. See
+[review format and limits](docs/QUALIFICATION.md). It cannot discover omitted clauses.
 
-## Gates (in order)
+## Gates
 
-1. Applicant snapshot: entity type, state, NAICS, employees, revenue,
-   ownership categories, SAM.gov registration status.
-2. Size standard: SBA size standard for the NAICS. Small or not small is a
-   gate, not a judgment. Record the standard cited.
-3. Notice terms: eligible entity types, geography, use of funds, cost share
-   or match, open and close dates, submission channel.
-4. Exclusions and conflicts: federal debt, debarment, prior award limits,
-   state nexus (registration, location, hiring).
-5. Verdict: eligible, likely eligible (open question named), or out (reason
-   quoted from the notice, not guessed).
+1. Classify the record: opportunity cycle, program, historical award or prospect;
+   grant, loan, credit, reimbursement, prize, contract or other instrument.
+2. Establish the applicant's role: direct applicant, intermediary, beneficiary
+   or paid service provider. A funded customer's eligibility is not the vendor's.
+3. Check eligible entity, geography, activity, beneficiaries and exclusions.
+   Apply size/ownership/registration requirements only if the notice requires them.
+4. Verify active cycle, deadline timezone, required preapplications, invitations
+   and registrations. Distinguish rolling, forecast, closed and unknown status.
+5. Calculate match, reimbursable costs, upfront cash, payment timing, permitted
+   funding combinations, reporting and performance duties. Unknown payment terms
+   remain unknown; an award ceiling is not expected net benefit.
+6. Resolve conflicting evidence using current official terms and amendments;
+   identify exact unresolved clauses instead of assuming the convenient reading.
 
-## Rules
+## Verdict
 
-- Quote the notice for every disqualifier.
-- Name the one document or fact that would flip a likely to a yes.
-- Never stretch NAICS, headcount, revenue, or location to fit.
-- Recheck anything older than 30 days before acting on it.
+Use `excluded`, `needs verification` or `requirements checked against current
+evidence`. Name the date, applicant facts and notice version used. This is not an
+award guarantee or program approval. Every critical assertion needs a supporting
+source passage and every exclusion a reason. Recheck deadlines and amendments
+before application decisions, not merely on a fixed monthly schedule.

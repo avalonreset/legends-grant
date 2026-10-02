@@ -1,0 +1,2657 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-10-01",
+  "coverage_claim": "Discovery routes only; source count is not collected opportunity count",
+  "applicant_types_policy": "Nonexhaustive discovery hints; original research labels preserved",
+  "sources": [
+    {
+      "id": "al-adeca",
+      "jurisdiction": "AL",
+      "name": "ADECA Funding Opportunities",
+      "url": "https://adeca.alabama.gov/about/funding-opportunities/",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "public_html_with_notice_downloads",
+      "applicant_types": [
+        "local_government",
+        "nonprofit",
+        "education",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Page explicitly lists currently open ADECA opportunities; downloadable notice and application guides. Covers ADECA divisions, not every Alabama agency. Eligibility must come from each notice.",
+      "evidence_urls": [
+        "https://adeca.alabama.gov/about/funding-opportunities/"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "al-adeca",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "al-opportunity-portal",
+      "jurisdiction": "AL",
+      "name": "Alabama Opportunity Portal",
+      "url": "https://grants.alabama.gov/OpportunityPortal?sym=BFF4932D-E1C1-4C54-A56C-C3A8B4445757",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "public_search_form_email_updates",
+      "applicant_types": [
+        "local_government",
+        "state_government",
+        "for_profit",
+        "nonprofit",
+        "university",
+        "emergency_services",
+        "other"
+      ],
+      "verification_status": "official_search_index_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Search by name, keyword, dates and eligible organization; email update signup shown. Statewide completeness and search execution not tested.",
+      "evidence_urls": [
+        "https://grants.alabama.gov/OpportunityPortal?sym=BFF4932D-E1C1-4C54-A56C-C3A8B4445757"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "al-opportunity-portal",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ct-deep",
+      "jurisdiction": "CT",
+      "name": "Connecticut DEEP Grants 101 and funding dashboard",
+      "url": "https://portal.ct.gov/deep/business-and-financial-assistance/grants-financial-assistance/grants-101",
+      "source_kind": "agency_grant_directory",
+      "access_mode": "public_html_with_powerbi_dashboard",
+      "applicant_types": [
+        "local_government",
+        "nonprofit",
+        "business",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Official page links a filterable Power BI Government opportunity table. Dashboard data extraction not tested. Environmental/energy coverage only; private and federal referral links are separate funders.",
+      "evidence_urls": [
+        "https://portal.ct.gov/deep/business-and-financial-assistance/grants-financial-assistance/grants-101"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ct-deep",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ct-decd",
+      "jurisdiction": "CT",
+      "name": "DECD Capital and Infrastructure Grants",
+      "url": "https://portal.ct.gov/DECD/Services/Community-Development/Funding-Opportunities/Capital-and-Infrastructure-Grants",
+      "source_kind": "agency_program_directory",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "local_government",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Entry page for innovation clusters, STEAP and Urban Act grants; program catalogue, not a current-open-only feed. Other sectors and individuals require additional agency discovery.",
+      "evidence_urls": [
+        "https://portal.ct.gov/DECD/Services/Community-Development/Funding-Opportunities/Capital-and-Infrastructure-Grants"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ct-decd",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "de-agency-grants",
+      "jurisdiction": "DE",
+      "name": "Delaware State Clearinghouse Agency Grants",
+      "url": "https://budget.delaware.gov/clearinghouse/grants.shtml",
+      "source_kind": "state_program_directory",
+      "access_mode": "public_html_agency_links",
+      "applicant_types": [
+        "government",
+        "nonprofit",
+        "business",
+        "education",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Explicitly a sample of grants by agency; not all federal funding represented. Entry directory contains grant-program names rather than verified open competitions; follow agency notices for eligibility and dates.",
+      "evidence_urls": [
+        "https://budget.delaware.gov/clearinghouse/grants.shtml"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "de-agency-grants",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "de-edge",
+      "jurisdiction": "DE",
+      "name": "Delaware EDGE Grant Competition",
+      "url": "https://business.delaware.gov/edge/",
+      "source_kind": "agency_business_program",
+      "access_mode": "public_html_with_application_links",
+      "applicant_types": [
+        "small_business"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Direct official small-business grant competition source. Cycle and eligibility must be checked at application time; not general Delaware grant coverage.",
+      "evidence_urls": [
+        "https://business.delaware.gov/edge/"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "de-edge",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "fl-dos",
+      "jurisdiction": "FL",
+      "name": "Florida Department of State Arts and Culture Grants",
+      "url": "https://dos.fl.gov/cultural/grants/",
+      "source_kind": "agency_program_directory",
+      "access_mode": "public_html_linked_application_portal",
+      "applicant_types": [
+        "nonprofit",
+        "cultural_organization",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Program and application guidance links to online grant system. Culture-specific; no comprehensive Florida portal established in this review.",
+      "evidence_urls": [
+        "https://dos.fl.gov/cultural/grants/"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "fl-dos",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "fl-historical",
+      "jurisdiction": "FL",
+      "name": "Florida Historical Resources Grants",
+      "url": "https://dos.fl.gov/historical/grants",
+      "source_kind": "agency_program_directory",
+      "access_mode": "public_html_linked_dosgrants_portal",
+      "applicant_types": [
+        "local_government",
+        "nonprofit",
+        "higher_education",
+        "research_institution"
+      ],
+      "verification_status": "official_search_index_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Historic preservation and cemetery programs; page contains closed FY2028 application cycle dates in July 2026. Retain as discovery entry, not as currently open grant.",
+      "evidence_urls": [
+        "https://dos.fl.gov/historical/grants"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "fl-historical",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ga-opb",
+      "jurisdiction": "GA",
+      "name": "Georgia Office of Planning and Budget Grants Portal",
+      "url": "https://cares.georgia.gov/",
+      "source_kind": "agency_opportunity_portal",
+      "access_mode": "public_html_linked_grant_opportunities_and_application_portal",
+      "applicant_types": [
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Official OPB portal explicitly supports current opportunities, application and status. Coverage is OPB programs; do not assume every state agency participates. Separate applicant eligibility is not enumerated on landing page.",
+      "evidence_urls": [
+        "https://cares.georgia.gov/"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ga-opb",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ky-dlg",
+      "jurisdiction": "KY",
+      "name": "Kentucky DLG EYGA Grants Management Portal",
+      "url": "https://www.dlgportal.ky.gov/en-US/",
+      "source_kind": "agency_opportunity_portal",
+      "access_mode": "public_landing_page_account_for_application",
+      "applicant_types": [
+        "local_government",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "DLG portal links available state and federal grants; account required to apply/manage applications. Local government agency scope, not all Kentucky agencies.",
+      "evidence_urls": [
+        "https://www.dlgportal.ky.gov/en-US/",
+        "https://dlg.ky.gov/grants/federal/Pages/default.aspx"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ky-dlg",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "me-moca",
+      "jurisdiction": "ME",
+      "name": "Maine Community Funding Finder",
+      "url": "https://www.maine.gov/moca/funding",
+      "source_kind": "state_curated_opportunity_finder",
+      "access_mode": "public_searchable_html",
+      "applicant_types": [
+        "municipal_government",
+        "tribal_government",
+        "county_government",
+        "regional_council",
+        "school_district",
+        "water_district",
+        "sanitation_district",
+        "service_provider",
+        "other"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants",
+        "loans",
+        "other"
+      ],
+      "notes": "Filter by applicant, funding agency/entity and funding type; includes federal/state/other funding. Community-focused and explicitly may omit opportunities for other applicant types. Listed status can lag deadline; direct notice controls.",
+      "evidence_urls": [
+        "https://www.maine.gov/moca/funding"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "me-moca",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "md-ggo",
+      "jurisdiction": "MD",
+      "name": "Maryland Governor's Grants Office Resource Library",
+      "url": "https://grants.maryland.gov/Pages/Resource-Library.aspx",
+      "source_kind": "state_agency_directory",
+      "access_mode": "public_html_agency_links",
+      "applicant_types": [
+        "local_government",
+        "nonprofit",
+        "business",
+        "individual",
+        "education",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Directory links state agencies and federal resources plus Nonprofit Navigator. This is referral coverage, not a consolidated open-opportunity database. Transparency and USAspending links are award/spending research, not open grants.",
+      "evidence_urls": [
+        "https://grants.maryland.gov/Pages/Resource-Library.aspx"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "md-ggo",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ma-community",
+      "jurisdiction": "MA",
+      "name": "Massachusetts Community Grant Finder",
+      "url": "https://www.mass.gov/lists/community-grant-finder",
+      "source_kind": "state_program_directory",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "municipal_government"
+      ],
+      "verification_status": "official_search_index_content_reviewed_direct_fetch_failed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Central catalogue for cities and towns across agencies. Search-index content reviewed; direct open returned internal fetch error. Not statewide coverage for all applicant types.",
+      "evidence_urls": [
+        "https://www.mass.gov/lists/community-grant-finder"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ma-community",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ma-ogr",
+      "jurisdiction": "MA",
+      "name": "Massachusetts Office of Grants and Research Current Funding Opportunities",
+      "url": "https://www.mass.gov/current-funding-opportunities",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "state_government",
+        "local_government",
+        "tribal_government",
+        "nonprofit",
+        "public_safety"
+      ],
+      "verification_status": "official_search_index_content_reviewed_direct_fetch_failed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Current public-safety/justice solicitations with deadlines and eligibility summaries, including continuation-only opportunities. Search content reviewed; direct open fetch failed. Not the Commonwealth's full grant inventory.",
+      "evidence_urls": [
+        "https://www.mass.gov/current-funding-opportunities"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ma-ogr",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ms-mdhs",
+      "jurisdiction": "MS",
+      "name": "Mississippi Department of Human Services Grant Opportunities",
+      "url": "https://www.mdhs.ms.gov/support/procurement/grant-opportunities/",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "public_html_email_alert_signup",
+      "applicant_types": [
+        "nonprofit",
+        "non_federal_government",
+        "school_district"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Grant announcements and optional alerts. Human-services agency scope; listings under procurement must still be classified as grants from the actual notice.",
+      "evidence_urls": [
+        "https://www.mdhs.ms.gov/support/procurement/grant-opportunities/"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ms-mdhs",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ms-magic",
+      "jurisdiction": "MS",
+      "name": "Mississippi MAGIC e-Grants Portal guidance",
+      "url": "https://www.dfa.ms.gov/magics-e-grants-portal",
+      "source_kind": "state_grant_management_portal",
+      "access_mode": "public_guidance_linked_login",
+      "applicant_types": [
+        "individual",
+        "organization",
+        "government"
+      ],
+      "verification_status": "official_search_index_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Official page describes statewide grants-management access and registration. Does not establish an unauthenticated open-opportunity feed or complete public inventory.",
+      "evidence_urls": [
+        "https://www.dfa.ms.gov/magics-e-grants-portal"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ms-magic",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "nh-export",
+      "jurisdiction": "NH",
+      "name": "New Hampshire Office of International Commerce Export Funding",
+      "url": "https://www.nheconomy.com/who-we-help/importers-exporters/office-of-international-commerce/export-funding",
+      "source_kind": "agency_business_program",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "small_business"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Official STEP reimbursement grant source for exporting small businesses. No central all-applicant NH opportunity portal verified. NHDES loans-and-grants landing page returned 403; no attempt to bypass.",
+      "evidence_urls": [
+        "https://www.nheconomy.com/who-we-help/importers-exporters/office-of-international-commerce/export-funding"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "nh-export",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "nj-treasury",
+      "jurisdiction": "NJ",
+      "name": "New Jersey Treasury Search for Grants by Category",
+      "url": "https://www.nj.gov/treasury/grants-management/opportunities/search/",
+      "source_kind": "state_agency_directory",
+      "access_mode": "public_html_category_filter",
+      "applicant_types": [
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Official federal/state agency and opportunity directory explicitly says non-comprehensive. Table rows not exposed in fetched text; linked notice eligibility controls. Weekly Grants Update link exists; API/export not verified.",
+      "evidence_urls": [
+        "https://www.nj.gov/treasury/grants-management/opportunities/search/"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "nj-treasury",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ny-sfs",
+      "jurisdiction": "NY",
+      "name": "New York SFS Vendor Self-Service grants entry",
+      "url": "https://www.sfs.ny.gov/index.php/vendors",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "public_guidance_linked_search_and_account_portal",
+      "applicant_types": [
+        "government",
+        "nonprofit",
+        "tribal_organization",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "SFS official guidance confirms search/apply/manage grants; public indexed search showed opportunity title, agency, applicant types and deadline. Grants Gateway has moved to SFS. Application/prequalification requires account; no automated connector tested.",
+      "evidence_urls": [
+        "https://www.sfs.ny.gov/index.php/vendors",
+        "https://www.ny.gov/new-york-state-nonprofit-unit/new-york-state-nonprofit-unit"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ny-sfs",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "nc-state",
+      "jurisdiction": "NC",
+      "name": "North Carolina Grant Opportunities",
+      "url": "https://www.nc.gov/your-government/all-nc-state-services/grant-opportunities",
+      "source_kind": "state_program_directory",
+      "access_mode": "public_searchable_html_table",
+      "applicant_types": [
+        "local_government",
+        "nonprofit",
+        "individual",
+        "business",
+        "farmer",
+        "education",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Searchable category/program/agency directory spans agriculture, arts and other sectors. Program-level entry points rather than exclusively open notices; follow links for deadlines and direct applicant eligibility.",
+      "evidence_urls": [
+        "https://www.nc.gov/your-government/all-nc-state-services/grant-opportunities"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "nc-state",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "pa-state",
+      "jurisdiction": "PA",
+      "name": "Pennsylvania Discover State Grants",
+      "url": "https://www.pa.gov/grants",
+      "source_kind": "state_opportunity_finder",
+      "access_mode": "public_filterable_web_directory",
+      "applicant_types": [
+        "business",
+        "government",
+        "higher_education",
+        "individual",
+        "library",
+        "nonprofit"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants",
+        "loans",
+        "tax_credits",
+        "cooperative_agreements",
+        "delegation_agreements"
+      ],
+      "notes": "Official multi-agency finder states more than 20 agencies; applicant/agency/funding-type filters. Verify each program's open dates and eligibility; mixed financing must remain separated.",
+      "evidence_urls": [
+        "https://www.pa.gov/grants"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "pa-state",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "ri-state",
+      "jurisdiction": "RI",
+      "name": "Rhode Island State Grant Funding Opportunities",
+      "url": "https://controller.admin.ri.gov/grants-management/state-rhode-island-grant-funding-opportunities",
+      "source_kind": "state_opportunity_listing",
+      "access_mode": "public_html_application_links_ecivis_account",
+      "applicant_types": [
+        "municipal_government",
+        "nonprofit",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Current state-agency opportunity list; each item includes eligibility, deadlines and use of funds. eCivis/Euna account for application. Official applicant guide also documents weekly funding email.",
+      "evidence_urls": [
+        "https://controller.admin.ri.gov/grants-management/state-rhode-island-grant-funding-opportunities",
+        "https://controller.admin.ri.gov/sites/g/files/xkgbur621/files/2024-06/Intro%20Rhode%20Island%20Grants%20and%20eCivis%20for%20Applicants.pdf"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "ri-state",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "sc-commerce",
+      "jurisdiction": "SC",
+      "name": "South Carolina Commerce State Discretionary Incentives",
+      "url": "https://www.sccommerce.com/why-sc/incentives/state-discretionary-incentives",
+      "source_kind": "agency_program_directory",
+      "access_mode": "public_html_guidance_downloads",
+      "applicant_types": [
+        "local_government",
+        "business"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants",
+        "tax_credits",
+        "reimbursements"
+      ],
+      "notes": "Describes discretionary economic-development grant funds and separate credits. Many grants assist local governments supporting business projects; not a general direct small-business grant. No comprehensive SC opportunity portal verified.",
+      "evidence_urls": [
+        "https://www.sccommerce.com/why-sc/incentives/state-discretionary-incentives"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "sc-commerce",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "sc-archives",
+      "jurisdiction": "SC",
+      "name": "South Carolina Archives and History SHRAB Grant Programs",
+      "url": "https://scdah.sc.gov/sc-shrab-grant-programs",
+      "source_kind": "agency_program_directory",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "nonprofit",
+        "library",
+        "museum",
+        "higher_education",
+        "local_government",
+        "religious_organization"
+      ],
+      "verification_status": "official_search_index_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Archival microgrant/scholarship programs widen coverage beyond business incentives. Institution must meet archival/public-access conditions. Current cycle requires notice review.",
+      "evidence_urls": [
+        "https://scdah.sc.gov/sc-shrab-grant-programs"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "sc-archives",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "tn-tdec",
+      "jurisdiction": "TN",
+      "name": "Tennessee Environment and Conservation Grants Management System",
+      "url": "https://www.tn.gov/environment/about-tdec/grants/grants-system.html",
+      "source_kind": "agency_grant_management_portal",
+      "access_mode": "public_guidance_registered_portal",
+      "applicant_types": [
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Official description says all TDEC programs available, with registration, funding discovery and online application. Environmental agency coverage only; specific applicants determined by program.",
+      "evidence_urls": [
+        "https://www.tn.gov/environment/about-tdec/grants/grants-system.html"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "tn-tdec",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "tn-ocjp",
+      "jurisdiction": "TN",
+      "name": "Tennessee OCJP Grant Applications",
+      "url": "https://www.tn.gov/content/tn/finance/office-of-criminal-justice-programs/ocjp/fa-ocjp-grants/fa-ocjp-grantapp.html",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "public_html_notice_downloads_tn_grants_application",
+      "applicant_types": [
+        "nonprofit",
+        "government",
+        "other_program_specific"
+      ],
+      "verification_status": "official_search_index_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Open competitive solicitations posted on page and TN Grants. Includes program-specific eligibility and downloadable materials; not all Tennessee grants.",
+      "evidence_urls": [
+        "https://www.tn.gov/content/tn/finance/office-of-criminal-justice-programs/ocjp/fa-ocjp-grants/fa-ocjp-grantapp.html"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "tn-ocjp",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "vt-accd",
+      "jurisdiction": "VT",
+      "name": "Vermont ACCD Community Development Funding and Incentives",
+      "url": "https://accd.vermont.gov/community-development/funding-incentives",
+      "source_kind": "agency_program_directory",
+      "access_mode": "public_html_linked_grants_portal",
+      "applicant_types": [
+        "municipal_government",
+        "community_organization",
+        "other_program_specific"
+      ],
+      "verification_status": "official_search_index_content_reviewed_direct_fetch_failed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Community development programs including planning and redevelopment. Direct index fetch failed; official indexed content and VCDP guidance confirm program entry and grants.vermont.gov application path. Not statewide completeness.",
+      "evidence_urls": [
+        "https://accd.vermont.gov/community-development/funding-incentives",
+        "https://accd.vermont.gov/community-development/funding-incentives/vcdp/applicant-guidance"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "vt-accd",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "va-governor",
+      "jurisdiction": "VA",
+      "name": "Virginia Governor's Office Grants Resources",
+      "url": "https://www.governor.virginia.gov/constituent-services/grants/",
+      "source_kind": "state_program_directory",
+      "access_mode": "public_html_table_links",
+      "applicant_types": [
+        "government",
+        "nonprofit",
+        "university",
+        "tribal_government",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "State-agency grant opportunity/application-period table plus federal/local resources. Directory entry; stale or TBA dates require direct agency verification. No exhaustive statewide API verified.",
+      "evidence_urls": [
+        "https://www.governor.virginia.gov/constituent-services/grants/"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "va-governor",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "wv-state",
+      "jurisdiction": "WV",
+      "name": "West Virginia Funding Opportunities",
+      "url": "https://grants.wv.gov/grants/Pages/default.aspx",
+      "source_kind": "state_opportunity_listing",
+      "access_mode": "public_html_linked_wvoasis_search",
+      "applicant_types": [
+        "business",
+        "individual",
+        "government",
+        "nonprofit",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Agency groupings and active/expiration/forecast dates. Explicitly non-comprehensive, periodically revised forecasts. Main hub directs open applications to wvOASIS View Grant Opportunities; award dashboards must remain separate.",
+      "evidence_urls": [
+        "https://grants.wv.gov/grants/Pages/default.aspx",
+        "https://grants.wv.gov/Pages/default.aspx"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "wv-state",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "dc-state",
+      "jurisdiction": "DC",
+      "name": "District of Columbia Grants and Funding",
+      "url": "https://dc.gov/page/grants-and-funding",
+      "source_kind": "district_program_directory",
+      "access_mode": "public_html_agency_links",
+      "applicant_types": [
+        "individual",
+        "nonprofit",
+        "education",
+        "business",
+        "other_program_specific"
+      ],
+      "verification_status": "official_page_content_reviewed",
+      "retrieved_date": "2026-10-01",
+      "funding_types": [
+        "grants"
+      ],
+      "notes": "Official District entry directory for grants/funding and agency resources; includes homeowner and student programs plus organizational opportunities. Not a current-open-only inventory; direct agency notices determine eligibility.",
+      "evidence_urls": [
+        "https://dc.gov/page/grants-and-funding"
+      ],
+      "machine_readable_access": "No documented public opportunity API, RSS, or bulk export verified in this review.",
+      "source_id": "dc-state",
+      "applicant_types_exhaustive": false
+    },
+    {
+      "id": "us-ak-01",
+      "jurisdiction": "AK",
+      "name": "Alaska GEMS solicitations",
+      "url": "https://gems.dhss.alaska.gov/Home/",
+      "source_kind": "agency_opportunity_portal",
+      "access_mode": "Public solicitation browsing; GEMS/myAlaska account to apply",
+      "applicant_types": [
+        "nonprofits",
+        "public agencies",
+        "health and social service providers"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. DOH and DFCS operating/capital grants and RFIs/RFPs. Department coverage only; eligibility varies by solicitation. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://gems.dhss.alaska.gov/Home/"
+      ],
+      "source_id": "us-ak-01",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ak-02",
+      "jurisdiction": "AK",
+      "name": "Alaska grant notice discovery",
+      "url": "https://dot.alaska.gov/nreg/planning/grants.shtml",
+      "source_kind": "official_source_directory",
+      "access_mode": "HTML links to Alaska Online Public Notices",
+      "applicant_types": [
+        "public agencies",
+        "tribes",
+        "nonprofits",
+        "other eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official DOT instructions identify Grants and Grant Request for Proposals notice categories. Mixed public-notice service needs grant-category filtering. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://dot.alaska.gov/nreg/planning/grants.shtml"
+      ],
+      "source_id": "us-ak-02",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-az-03",
+      "jurisdiction": "AZ",
+      "name": "Arizona Department of Administration current grants",
+      "url": "https://doa.az.gov/about/services/apply-grant",
+      "source_kind": "state_opportunity_gateway",
+      "access_mode": "HTML gateway; eCivis account to apply",
+      "applicant_types": [
+        "businesses",
+        "nonprofits",
+        "government agencies"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official page links current grants and eCivis guide. Public extraction and coverage across every agency remain unverified. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://doa.az.gov/about/services/apply-grant"
+      ],
+      "source_id": "us-az-03",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ar-04",
+      "jurisdiction": "AR",
+      "name": "Arkansas DFA Intergovernmental Services RFPs",
+      "url": "https://www.dfa.arkansas.gov/office/intergovernmental-services/grant-programs/request-for-proposals/",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "HTML and downloadable RFPs; IGS Connect application",
+      "applicant_types": [
+        "victim service nonprofits",
+        "public agencies",
+        "other eligible service organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. VOCA, STOP and FVPSA unified application. Listing includes archived cycles; latest visible RFPs 2025, not proof of an open 2026 call. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.dfa.arkansas.gov/office/intergovernmental-services/grant-programs/request-for-proposals/"
+      ],
+      "source_id": "us-ar-04",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ca-05",
+      "jurisdiction": "CA",
+      "name": "California Grants Portal",
+      "url": "https://www.grants.ca.gov/",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Public searchable HTML; daily open-data CSV/API documented separately",
+      "applicant_types": [
+        "businesses",
+        "individuals",
+        "nonprofits",
+        "public agencies",
+        "tribal governments",
+        "other legal entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Competitive and first-come state grants and loans across agencies. Strong broad discovery source; distinguish grants from loans. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.grants.ca.gov/",
+        "https://lab.data.ca.gov/dataset/california-grants-portal"
+      ],
+      "source_id": "us-ca-05",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ca-06",
+      "jurisdiction": "CA",
+      "name": "California Grants Portal open dataset",
+      "url": "https://lab.data.ca.gov/dataset/california-grants-portal",
+      "source_kind": "official_open_opportunity_dataset",
+      "access_mode": "Daily CSV download and documented query API options",
+      "applicant_types": [
+        "businesses",
+        "individuals",
+        "nonprofits",
+        "public agencies",
+        "tribal governments",
+        "other legal entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. State Library dataset documents daily updates at 8:45pm, public-domain license, competitive/first-come grants and loans from July 2020. Exact resource endpoint must be resolved and tested before ingestion. Agency JSON submission specification is inbound publishing, not the consumer API. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees. Standard data.ca.gov dataset link returned 403 through research fetch; official lab.data.ca.gov representation was readable. API endpoint and CSV download were documented, not execution-tested.",
+      "evidence_urls": [
+        "https://lab.data.ca.gov/dataset/california-grants-portal",
+        "https://www.grants.ca.gov/",
+        "https://www.grants.ca.gov/part-iii-b-submission-via-json/",
+        "https://data.ca.gov/dataset/california-grants-portal"
+      ],
+      "source_id": "us-ca-06",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-co-07",
+      "jurisdiction": "CO",
+      "name": "Colorado DOLA grants portal",
+      "url": "https://dola.colorado.gov/grants_portal/",
+      "source_kind": "agency_application_gateway",
+      "access_mode": "Public instructions; local-government account required to apply",
+      "applicant_types": [
+        "local governments"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Local-government grant application/reporting system. Not a comprehensive all-applicant discovery feed; discover individual DOLA grant programs. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://dola.colorado.gov/grants_portal/"
+      ],
+      "source_id": "us-co-07",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-co-08",
+      "jurisdiction": "CO",
+      "name": "Colorado OEDIT incentives",
+      "url": "https://choosecolorado.com/doing-business/incentives/",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML with linked program details",
+      "applicant_types": [
+        "businesses",
+        "research institutions",
+        "economic development organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Grants, job incentives and tax credits; includes Advanced Industries and job-training funding. Production OEDIT programs-and-funding fetch returned 403; search exposed test/dev hosts, intentionally not used as canonical registry entries. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://choosecolorado.com/doing-business/incentives/"
+      ],
+      "source_id": "us-co-08",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-hi-09",
+      "jurisdiction": "HI",
+      "name": "Hawaii Grants-in-Aid official gateway",
+      "url": "https://labor.hawaii.gov/ocs/service-programs-index/gia/",
+      "source_kind": "official_program_directory",
+      "access_mode": "Public HTML; Legislature application and PDF forms",
+      "applicant_types": [
+        "eligible organizations",
+        "nonprofits"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Chapter 42F operating and capital grants; Legislature selects recipients, OCS administers assigned grants. 2026 FAQ deadline January 23, 2026 is closed; next cycle unverified. Statewide agency grant coverage not established. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://labor.hawaii.gov/ocs/service-programs-index/gia/",
+        "https://data.capitol.hawaii.gov/sessions/session2026/Docs/GIA/GIA_FAQs.pdf"
+      ],
+      "source_id": "us-hi-09",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-id-10",
+      "jurisdiction": "ID",
+      "name": "Idaho Commerce grants",
+      "url": "https://commerce.idaho.gov/incentives/grants/",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML and program guides; grant portal applications",
+      "applicant_types": [
+        "small businesses",
+        "local governments",
+        "tribes",
+        "nonprofits",
+        "service districts"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Community infrastructure, rural development, tourism, broadband, STEP export and opportunity funding. Grant Pin Map is historical awards and must not populate open opportunities. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://commerce.idaho.gov/incentives/grants/"
+      ],
+      "source_id": "us-id-10",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-id-11",
+      "jurisdiction": "ID",
+      "name": "Idaho Gem Grant",
+      "url": "https://commerce.idaho.gov/communities/grants/idaho-gem-grant/",
+      "source_kind": "official_program_opportunity",
+      "access_mode": "Public HTML/PDF guidelines; Commerce portal account arranged via agency",
+      "applicant_types": [
+        "rural local governments",
+        "eligible communities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. FY2027 quarterly application deadlines explicitly listed through March 2027; infrastructure and private-sector job creation grants up to $50,000. Narrow community eligibility. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://commerce.idaho.gov/communities/grants/idaho-gem-grant/"
+      ],
+      "source_id": "us-id-11",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-il-12",
+      "jurisdiction": "IL",
+      "name": "Illinois CSFA funding opportunities",
+      "url": "https://omb.illinois.gov/public/gata/csfa/OpportunityList.aspx",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Public HTML table; GATA registration and AmpliFund for applicable applications",
+      "applicant_types": [
+        "nonprofits",
+        "businesses",
+        "local governments",
+        "schools",
+        "higher education",
+        "other program-eligible organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Notice table has agency, application dates and award range. GMS-prefixed notices apply through AmpliFund. Broader CSFA also includes awards: use opportunity list, not award ledger. Weekly notice email documented by GATA. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://omb.illinois.gov/public/gata/csfa/OpportunityList.aspx",
+        "https://gata.illinois.gov/"
+      ],
+      "source_id": "us-il-12",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-in-13",
+      "jurisdiction": "IN",
+      "name": "Indiana Office of Energy Development funding",
+      "url": "https://www.in.gov/oed/grants-and-funding-opportunities/index",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public HTML table; program-specific applications; email updates",
+      "applicant_types": [
+        "local governments",
+        "households",
+        "energy contractors",
+        "businesses"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Energy grants and household rebates with applicant/status/deadline columns. Grant and rebate types must remain distinct. Agency-only coverage; broader State Budget Agency gateway separately verified in this registry. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.in.gov/oed/grants-and-funding-opportunities/index"
+      ],
+      "source_id": "us-in-13",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ia-14",
+      "jurisdiction": "IA",
+      "name": "IowaGrants public funding opportunities",
+      "url": "https://www.iowagrants.gov/storefrontFOList.do",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Public HTML table/details; SSO login for application",
+      "applicant_types": [
+        "schools",
+        "higher education",
+        "nonprofits",
+        "public agencies",
+        "businesses",
+        "other program-eligible organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Multiagency list exposes opportunity ID, agency, category, posted date and deadlines. Includes tax-credit records and other RFPs, so classify instrument. No-login discovery demonstrated. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.iowagrants.gov/storefrontFOList.do"
+      ],
+      "source_id": "us-ia-14",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ia-15",
+      "jurisdiction": "IA",
+      "name": "Iowa Workforce Development grants",
+      "url": "https://workforce.iowa.gov/opportunities/grants",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public HTML; links to opportunities/applications",
+      "applicant_types": [
+        "employers",
+        "community colleges",
+        "apprenticeship providers",
+        "students",
+        "nonprofits"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Separates active training grants, previous programs and individual scholarship resources. Useful employer and education supplement; archived grants are not open calls. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://workforce.iowa.gov/opportunities/grants"
+      ],
+      "source_id": "us-ia-15",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ks-16",
+      "jurisdiction": "KS",
+      "name": "Kansas Governor's Grants Program",
+      "url": "https://www.grants.ks.gov/home",
+      "source_kind": "agency_opportunity_gateway",
+      "access_mode": "Public grant-program links; organization portal registration to apply",
+      "applicant_types": [
+        "nonprofits",
+        "state and local governments",
+        "tribes",
+        "schools",
+        "universities",
+        "faith-based organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Justice/victim-service state and federal grants. Home also contains grant-award news: follow program solicitations rather than ingesting awards. Not a statewide all-sector portal. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.grants.ks.gov/home",
+        "https://www.kansas.gov/grants/access.do"
+      ],
+      "source_id": "us-ks-16",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ks-17",
+      "jurisdiction": "KS",
+      "name": "Kansas KDHE Grant Management System",
+      "url": "https://kgms.ks.gov/",
+      "source_kind": "agency_opportunity_portal",
+      "access_mode": "Public landing/program tabs; login to apply",
+      "applicant_types": [
+        "local health agencies",
+        "environmental organizations",
+        "other program-eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Health/environment grants, including Aid to Local and Environmental Field Services. Program-specific eligibility and public detail extraction require review. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://kgms.ks.gov/"
+      ],
+      "source_id": "us-ks-17",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-la-18",
+      "jurisdiction": "LA",
+      "name": "Louisiana Education grants",
+      "url": "https://doe.louisiana.gov/school-system-leaders/school-system-finances/grants",
+      "source_kind": "agency_opportunity_gateway",
+      "access_mode": "Public HTML/RFPs; E-Grants system",
+      "applicant_types": [
+        "school systems",
+        "education service organizations",
+        "other education-program applicants"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Grant Opportunities section links RFPs. E-Grants allocation/expenditure data and GAP 2009-2016 historical grants are not open-call feeds. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://doe.louisiana.gov/school-system-leaders/school-system-finances/grants"
+      ],
+      "source_id": "us-la-18",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-la-19",
+      "jurisdiction": "LA",
+      "name": "Louisiana Economic Development incentives",
+      "url": "https://www.opportunitylouisiana.gov/incentives",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML and linked applications; FastLane login where applicable",
+      "applicant_types": [
+        "businesses"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. High-Impact Jobs provides reimbursable grants. Most other programs are tax incentives; list labels sunset incentives no longer accepting new applicants. Avoid treating FastLane project search as open calls. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.opportunitylouisiana.gov/incentives"
+      ],
+      "source_id": "us-la-19",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mi-20",
+      "jurisdiction": "MI",
+      "name": "Michigan EGLE funding opportunities",
+      "url": "https://www.michigan.gov/egle/regulatory-assistance/funding",
+      "source_kind": "agency_opportunity_directory",
+      "access_mode": "Public filtered HTML; email updates",
+      "applicant_types": [
+        "individuals",
+        "local governments",
+        "nonprofits",
+        "schools",
+        "universities",
+        "water suppliers",
+        "local health departments"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Grants, loans and rebates with applicant filters. Includes discontinued/closed programs; needs status parsing. Download data under disbursement dashboard concerns past spending, not open opportunities. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.michigan.gov/egle/regulatory-assistance/funding"
+      ],
+      "source_id": "us-mi-20",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mi-21",
+      "jurisdiction": "MI",
+      "name": "Michigan MDARD grants",
+      "url": "https://www.michigan.gov/mdard/business-development/grantfund",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public HTML table and linked program pages; email updates",
+      "applicant_types": [
+        "farmers",
+        "food businesses",
+        "nonprofits",
+        "universities",
+        "tribes",
+        "local governments",
+        "individuals"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Agricultural, rural, research and food-system grants with applicant column. Grant-recipient dashboard is historical awards and not discovery input. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.michigan.gov/mdard/business-development/grantfund"
+      ],
+      "source_id": "us-mi-21",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mn-22",
+      "jurisdiction": "MN",
+      "name": "Minnesota state grant opportunity index",
+      "url": "https://mn.gov/grants/a-z/",
+      "source_kind": "state_opportunity_directory",
+      "access_mode": "Public searchable HTML; redirects to agency grant detail",
+      "applicant_types": [
+        "nonprofits",
+        "public agencies",
+        "businesses",
+        "educational institutions",
+        "other eligible organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official single entry point by agency or topic. Every notice has its own eligibility; directory is not a guarantee all applicant classes have an open call. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://mn.gov/grants/a-z/"
+      ],
+      "source_id": "us-mn-22",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mo-23",
+      "jurisdiction": "MO",
+      "name": "Missouri DNR financial assistance portal",
+      "url": "https://dnr.mo.gov/financial-assistance-opportunities/funding-portal",
+      "source_kind": "agency_application_gateway",
+      "access_mode": "Public guidance and linked assistance pages; portal access request to apply",
+      "applicant_types": [
+        "local governments",
+        "utilities",
+        "nonprofits",
+        "businesses",
+        "other program-eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Grants and loans. Agency says account provisioning takes 24-48 hours; application/reporting portal is not equivalent to a public opportunity API. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://dnr.mo.gov/financial-assistance-opportunities/funding-portal"
+      ],
+      "source_id": "us-mo-23",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mo-24",
+      "jurisdiction": "MO",
+      "name": "Missouri CDBG opportunities",
+      "url": "https://ded.mo.gov/cdbg",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML; Opportunities to Apply and program documents",
+      "applicant_types": [
+        "small cities",
+        "counties"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Federal pass-through community development grants for infrastructure/facilities and local economies. Opportunity links should be ingested separately from public-comment and webinar notices. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://ded.mo.gov/cdbg"
+      ],
+      "source_id": "us-mo-24",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mt-25",
+      "jurisdiction": "MT",
+      "name": "Montana WebGrants",
+      "url": "https://funding.mt.gov/index.jsp",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Public funding search; account applications; agency migrations",
+      "applicant_types": [
+        "public agencies",
+        "nonprofits",
+        "tribes",
+        "businesses",
+        "other eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Multiple state agencies, but not complete: Agriculture moved to mtagr.webgrantscloud.com; FWP moved to mtfwp.webgrantscloud.com September 2026; highway safety uses new portal. Monitor migration links, do not assume legacy portal coverage. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://funding.mt.gov/index.jsp"
+      ],
+      "source_id": "us-mt-25",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ne-26",
+      "jurisdiction": "NE",
+      "name": "Nebraska DED programs",
+      "url": "https://opportunity.nebraska.gov/programs/",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML program directory; AmpliFund for applications",
+      "applicant_types": [
+        "businesses",
+        "local governments",
+        "nonprofits",
+        "research institutions",
+        "housing organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Grants, loans, tax incentives and other support across business/community/housing. Includes historical ARPA programs; only classify open when program details establish dates/funds. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://opportunity.nebraska.gov/programs/"
+      ],
+      "source_id": "us-ne-26",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ne-27",
+      "jurisdiction": "NE",
+      "name": "Nebraska SBIR/STTR matching grants",
+      "url": "https://opportunity.nebraska.gov/programs/business/sbir-sttr/",
+      "source_kind": "official_program_opportunity",
+      "access_mode": "Public HTML guidelines; Apply Now application links",
+      "applicant_types": [
+        "for-profit small businesses"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Phase 0 preparation and Phase I/II federal matching grants. FY2027 windows shown July 7, 2026-June 30, 2027, subject to funding exhaustion; Nebraska activity requirement applies. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://opportunity.nebraska.gov/programs/business/sbir-sttr/"
+      ],
+      "source_id": "us-ne-27",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-nv-28",
+      "jurisdiction": "NV",
+      "name": "Nevada OFA grant discovery",
+      "url": "https://prod.ofa.nv.gov/grant-discovery/grant-opportunities/",
+      "source_kind": "state_opportunity_gateway",
+      "access_mode": "Public official guidance linking NEVADA ePro",
+      "applicant_types": [
+        "nonprofits",
+        "state and local governments",
+        "businesses",
+        "other eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official guidance says state/local NOFOs must be reported through NEVADA ePro, including state and federal subawards. ePro also supports procurement; needs NOFO separation. Private-funding spreadsheet is separate, not official state opportunities. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://prod.ofa.nv.gov/grant-discovery/grant-opportunities/"
+      ],
+      "source_id": "us-nv-28",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-nv-29",
+      "jurisdiction": "NV",
+      "name": "Nevada Education grant notices",
+      "url": "https://doe.nv.gov/grants",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public HTML with PDF NOFOs and program-specific submission",
+      "applicant_types": [
+        "school districts",
+        "education organizations",
+        "other eligible providers"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. FY2027/FY2026 notices and archived cycles. Explicit dates enable status normalization; stale or closed notices must not be shown as accepting applications. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://doe.nv.gov/grants"
+      ],
+      "source_id": "us-nv-29",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-nm-30",
+      "jurisdiction": "NM",
+      "name": "New Mexico DFA grant search",
+      "url": "https://platform.dfa.nm.gov/grant-search.html",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Public searchable HTML/dynamic profile links",
+      "applicant_types": [
+        "businesses",
+        "nonprofits",
+        "public agencies",
+        "tribes",
+        "education institutions",
+        "individuals where notice permits"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Combines federal and New Mexico opportunities with applicant/instrument/date/amount filters. Observed refreshed September 30, 2026. Federal duplicate records need canonical ID deduplication; no documented API verified. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://platform.dfa.nm.gov/grant-search.html"
+      ],
+      "source_id": "us-nm-30",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-nd-31",
+      "jurisdiction": "ND",
+      "name": "North Dakota public WebGrants opportunities",
+      "url": "https://grants.nd.gov/storefrontFOList.do",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Public HTML table; NDLogin account to apply",
+      "applicant_types": [
+        "public agencies",
+        "veteran service organizations",
+        "infrastructure applicants",
+        "other program-eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Current legacy public table observed with Veterans Affairs and infrastructure records. DPI opportunities moved to separate nddpi.grants.nd.gov system; not comprehensive without that adapter. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://grants.nd.gov/storefrontFOList.do",
+        "https://grants.nd.gov/index.do"
+      ],
+      "source_id": "us-nd-31",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-oh-32",
+      "jurisdiction": "OH",
+      "name": "Ohio Grants portal",
+      "url": "https://grantsportal.ohio.gov/",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Public dynamic opportunity pages; OHID to apply",
+      "applicant_types": [
+        "public agencies",
+        "nonprofits",
+        "businesses",
+        "other program-eligible entities"
+      ],
+      "verification_status": "official_detail_verified_root_fetch_failed",
+      "notes": "Retrieved 2026-10-01. Official opportunity detail page verified with current/past navigation, eligibility and deadline fields. Root fetch timed out; detail extraction returned loading shell. Browser/JS adapter verification needed; do not claim working bulk extraction. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://grantsportal.ohio.gov/",
+        "https://grantsportal.ohio.gov/Public/FundingOpportunityDetails?detailid=f37d714f-1637-f011-8f04-00505680042e",
+        "https://archives.obm.ohio.gov/Files/Grants/Job_Aid/searching_and_applying_for_funding_opportunities.pdf"
+      ],
+      "source_id": "us-oh-32",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ok-33",
+      "jurisdiction": "OK",
+      "name": "Oklahoma TSET funding opportunities",
+      "url": "https://www.oklahoma.gov/tset/funding-opportunities.html",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public HTML schedule; program RFAs/RFPs; email alerts",
+      "applicant_types": [
+        "school districts",
+        "communities",
+        "nonprofits",
+        "public health organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Public-health grants and sponsorships; distinguishes open notices from anticipated FY2027 quarterly releases. Forecast dates can change. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.oklahoma.gov/tset/funding-opportunities.html"
+      ],
+      "source_id": "us-ok-33",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ok-34",
+      "jurisdiction": "OK",
+      "name": "Oklahoma OCAST funding portal",
+      "url": "https://www.oklahoma.gov/ocast/funding-portal.html",
+      "source_kind": "agency_application_gateway",
+      "access_mode": "Public instructions; registered portal login when funding window opens",
+      "applicant_types": [
+        "businesses",
+        "research institutions",
+        "other program-eligible organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Innovation/research funding entry point. Portal page alone does not establish every program's current window, eligibility or instrument; program-detail follow-up required. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.oklahoma.gov/ocast/funding-portal.html"
+      ],
+      "source_id": "us-ok-34",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-or-35",
+      "jurisdiction": "OR",
+      "name": "Oregon DAS housing grant opportunities",
+      "url": "https://www.oregon.gov/das/housing-grants/pages/index.aspx",
+      "source_kind": "multiagency_sector_opportunity_gateway",
+      "access_mode": "Public HTML agency links; OregonBuys supplier account to apply",
+      "applicant_types": [
+        "housing developers",
+        "nonprofits",
+        "public agencies",
+        "eligible housing providers"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Housing opportunities from ODHS/OHA/OHCS, updated monthly or more often. OregonBuys is mixed procurement/grants, so use linked housing opportunities and instrument classification; not statewide all-sector coverage. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.oregon.gov/das/housing-grants/pages/index.aspx"
+      ],
+      "source_id": "us-or-35",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-sd-36",
+      "jurisdiction": "SD",
+      "name": "South Dakota Education competitive grants",
+      "url": "https://doe.sd.gov/grants/",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public HTML clearinghouse with grant detail links",
+      "applicant_types": [
+        "school districts",
+        "education institutions",
+        "eligible education providers"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official competitive grant clearinghouse currently lists CTE equipment funding. Narrow sector coverage; broader state grant portal not established. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://doe.sd.gov/grants/"
+      ],
+      "source_id": "us-sd-36",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-sd-37",
+      "jurisdiction": "SD",
+      "name": "South Dakota DOT economic development grants",
+      "url": "https://dot.sd.gov/Doing-Business/Local-Governments/Transportation-Economic-Development-Grants",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML; downloadable application, fact sheets and guide",
+      "applicant_types": [
+        "local governments",
+        "eligible community infrastructure sponsors"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Community access, industrial park and agribusiness road grants. Page includes award announcements; extract application rules/dates, not awarded projects. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://dot.sd.gov/Doing-Business/Local-Governments/Transportation-Economic-Development-Grants"
+      ],
+      "source_id": "us-sd-37",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-tx-38",
+      "jurisdiction": "TX",
+      "name": "Texas Governor Public Safety eGrants",
+      "url": "https://egrants.gov.texas.gov/",
+      "source_kind": "agency_opportunity_portal",
+      "access_mode": "Public program/calendar resources; registered eGrants application",
+      "applicant_types": [
+        "government agencies",
+        "nonprofits",
+        "other eligible public-safety organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. PSO agency application system, not statewide all-sector grants. Statewide ESBD grant opportunity replacement documented beginning fall 2024; discovery adapter needed there. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://egrants.gov.texas.gov/",
+        "https://comptroller.texas.gov/purchasing/grant-management/",
+        "https://comptroller.texas.gov/purchasing/docs/grant-management-printv2.1.pdf"
+      ],
+      "source_id": "us-tx-38",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-tx-39",
+      "jurisdiction": "TX",
+      "name": "Texas HHS grants portal",
+      "url": "https://grants.hhs.texas.gov/Grants/",
+      "source_kind": "agency_opportunity_portal",
+      "access_mode": "Public open-grant section; account for applying/managing",
+      "applicant_types": [
+        "health and human service organizations",
+        "other program-eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Observed explicit no-open-opportunities state. Valid monitor source but zero current opportunities is not an extraction error. Do not infer this covers other Texas agencies. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://grants.hhs.texas.gov/Grants/"
+      ],
+      "source_id": "us-tx-39",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-tx-40",
+      "jurisdiction": "TX",
+      "name": "Texas Education grant opportunity gateway",
+      "url": "https://tea.texas.gov/data-reports/grants/grants-administration/applying-grant/applying-grant",
+      "source_kind": "agency_opportunity_gateway",
+      "access_mode": "Public opportunity link; TEAL/eGrants or downloadable PDF/Excel application",
+      "applicant_types": [
+        "school districts",
+        "charter schools",
+        "education service centers",
+        "higher education",
+        "nonprofits"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official instructions link all active and recent TEA grants. Formula and discretionary grants need separate labels; active/recent includes closed records. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://tea.texas.gov/data-reports/grants/grants-administration/applying-grant/applying-grant"
+      ],
+      "source_id": "us-tx-40",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ut-41",
+      "jurisdiction": "UT",
+      "name": "Utah Enterprise Grants Management System",
+      "url": "https://utahgrants.utah.gov/",
+      "source_kind": "agency_opportunity_portal",
+      "access_mode": "Public Programs/Opportunities dynamic tabs; applicant account",
+      "applicant_types": [
+        "school districts",
+        "education organizations",
+        "other eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Landing page identifies Utah State Board of Education support. Do not assume all-state agency coverage or successful data extraction from loading tabs. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://utahgrants.utah.gov/"
+      ],
+      "source_id": "us-ut-41",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-ut-42",
+      "jurisdiction": "UT",
+      "name": "Utah GOED grants and funding",
+      "url": "https://business.utah.gov/grants-funding/",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public dated program listings/calendar; account applications",
+      "applicant_types": [
+        "businesses",
+        "nonprofits",
+        "counties",
+        "cities",
+        "towns",
+        "tribes",
+        "public entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Grants, tax credits, investment zones and capital programs. Separates available and previous grants; rural community FY2027 window September 14-October 30, 2026 observed. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://business.utah.gov/grants-funding/"
+      ],
+      "source_id": "us-ut-42",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-wa-43",
+      "jurisdiction": "WA",
+      "name": "Washington FundHubWA",
+      "url": "https://fundhub.wa.gov/funding-opportunities/",
+      "source_kind": "state_sector_opportunity_portal",
+      "access_mode": "Public filtered HTML/dynamic table",
+      "applicant_types": [
+        "agriculture",
+        "businesses",
+        "education",
+        "individuals",
+        "local governments",
+        "nonprofits",
+        "state agencies",
+        "tribes",
+        "utilities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Commerce-administered climate/energy/infrastructure funding includes federal/state grants, loans, rebates, incentives, competitions and RFPs. Active/closed/upcoming filters. Broad applicant types but not all subject areas. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://fundhub.wa.gov/funding-opportunities/"
+      ],
+      "source_id": "us-wa-43",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-wa-44",
+      "jurisdiction": "WA",
+      "name": "Washington business loans and grants directory",
+      "url": "https://www.business.wa.gov/site/alias__business/928/Business-Loans.aspx",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML filters by purpose and federal/state/local source",
+      "applicant_types": [
+        "small businesses",
+        "startups",
+        "exporters",
+        "rural businesses"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Updated September 9, 2026. Covers loans as well as grants and linked partner resources; verify individual sponsor and open status. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.business.wa.gov/site/alias__business/928/Business-Loans.aspx"
+      ],
+      "source_id": "us-wa-44",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-wi-45",
+      "jurisdiction": "WI",
+      "name": "Wisconsin DOJ grants",
+      "url": "https://www.wisdoj.gov/Pages/Grants/grants.aspx",
+      "source_kind": "agency_opportunity_gateway",
+      "access_mode": "Public opportunity links; WebGrants account for applications",
+      "applicant_types": [
+        "justice agencies",
+        "local governments",
+        "nonprofits",
+        "eligible service organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. All new notices/applications moved to WebGrants June 1, 2026; old Egrants access turned off August 15. Avoid legacy-system adapter. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.wisdoj.gov/Pages/Grants/grants.aspx"
+      ],
+      "source_id": "us-wi-45",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-wi-46",
+      "jurisdiction": "WI",
+      "name": "Wisconsin Economic Development Corporation programs",
+      "url": "https://wedc.org/programs/",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public HTML with program guides",
+      "applicant_types": [
+        "businesses",
+        "cooperatives",
+        "local governments",
+        "tribes",
+        "economic development organizations",
+        "nonprofits"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Grants, loans, tax credits and technical support. Small Business Development Grant applicants are intermediaries; do not confuse benefiting businesses with direct applicants. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://wedc.org/programs/"
+      ],
+      "source_id": "us-wi-46",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-wy-47",
+      "jurisdiction": "WY",
+      "name": "Wyoming Grants Management Office",
+      "url": "https://sbd.wyo.gov/grants",
+      "source_kind": "state_opportunity_gateway",
+      "access_mode": "Public HTML; linked Grants Connect dashboard, opportunity scans and newsletters",
+      "applicant_types": [
+        "state agencies",
+        "local governments",
+        "tribes",
+        "nonprofits",
+        "small businesses"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. State/federal opportunity discovery and technical assistance. Hub explicitly warns federal program information may be stale; authoritative agency notices must resolve open status. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://sbd.wyo.gov/grants",
+        "https://sites.google.com/wyo.gov/budget-department/grants/grants-connect-hub"
+      ],
+      "source_id": "us-wy-47",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-wy-48",
+      "jurisdiction": "WY",
+      "name": "Wyoming Agriculture grants and opportunities",
+      "url": "https://agriculture.wy.gov/index.php?section=Grants-and-Opportunities",
+      "source_kind": "agency_opportunity_directory",
+      "access_mode": "Public HTML and linked program documents",
+      "applicant_types": [
+        "agricultural producers",
+        "nonprofits",
+        "public agencies",
+        "other eligible agricultural entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Food systems, specialty crops, water quality and young producers, including linked federal programs. Deduplicate federal records; agency directory does not itself prove live application windows. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://agriculture.wy.gov/index.php?section=Grants-and-Opportunities"
+      ],
+      "source_id": "us-wy-48",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-pr-49",
+      "jurisdiction": "PR",
+      "name": "Puerto Rico Justice state-grant public notices",
+      "url": "https://www.justicia.pr.gov/category/avisospublicos-subvencionesestatales/",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public Spanish HTML notices and linked proposals",
+      "applicant_types": [
+        "nonprofits",
+        "municipalities",
+        "executive agencies",
+        "public corporations",
+        "University of Puerto Rico programs"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. State victim-service grants with publication/closing dates. FY2026 latest observed call closed March 10, 2026; monitor future cycles, do not report it open. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.justicia.pr.gov/category/avisospublicos-subvencionesestatales/"
+      ],
+      "source_id": "us-pr-49",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-pr-50",
+      "jurisdiction": "PR",
+      "name": "Puerto Rico DDEC assistance and incentives",
+      "url": "https://www.desarrollo.pr.gov/ayudas-e-incentivos?tab=expandir",
+      "source_kind": "official_economic_development_directory",
+      "access_mode": "Public Spanish HTML with program documents and application links",
+      "applicant_types": [
+        "small and medium businesses",
+        "entrepreneurs",
+        "artisans",
+        "students",
+        "nonprofits"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Seed-capital incentives, business/industry/export support and scholarships. Mixed grants/tax incentives/awards; each instrument and availability require individual validation. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.desarrollo.pr.gov/ayudas-e-incentivos?tab=expandir"
+      ],
+      "source_id": "us-pr-50",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-usvi-51",
+      "jurisdiction": "VI",
+      "name": "US Virgin Islands LEPC grant programs",
+      "url": "https://lepc.vi.gov/grant-programs/",
+      "source_kind": "agency_opportunity_directory",
+      "access_mode": "Public HTML with linked grant program pages",
+      "applicant_types": [
+        "justice agencies",
+        "nonprofits",
+        "victim-service providers",
+        "other eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. JAG, juvenile justice, VOCA, PREA, STOP VAWA and RSAT federal pass-through programs. Current open notices and territory-wide coverage not established; program index is monitoring entry point only. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://lepc.vi.gov/grant-programs/"
+      ],
+      "source_id": "us-usvi-51",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01",
+      "research_jurisdiction": "USVI"
+    },
+    {
+      "id": "us-gu-52",
+      "jurisdiction": "GU",
+      "name": "Guam official grants gateway",
+      "url": "https://www.guam.gov/grants/",
+      "source_kind": "territory_opportunity_gateway",
+      "access_mode": "Public HTML and linked funding notice",
+      "applicant_types": [
+        "public agencies",
+        "nonprofits",
+        "other program-eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official portal links notice of funding availability and application, but also old 2014 recreation-plan documents. Recency and applicant breadth remain gaps; do not treat entire page as current opportunities. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.guam.gov/grants/"
+      ],
+      "source_id": "us-gu-52",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-gu-53",
+      "jurisdiction": "GU",
+      "name": "Guam public notices portal grant example",
+      "url": "https://notices.guam.gov/notice_detail/7155",
+      "source_kind": "official_notice",
+      "access_mode": "Public HTML notice and linked application materials",
+      "applicant_types": [
+        "broadband providers",
+        "other BEAD-eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official OIPD BEAD subgrant NOFO proves territorial public notices carry grant opportunities. Specific notice is a 2025 call, not verified open; monitor notice portal for new NOFOs and filter out procurement/meetings. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://notices.guam.gov/notice_detail/7155"
+      ],
+      "source_id": "us-gu-53",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-as-54",
+      "jurisdiction": "AS",
+      "name": "American Samoa Commerce funding notices",
+      "url": "https://doc.as.gov/news",
+      "source_kind": "agency_opportunity_notice_stream",
+      "access_mode": "Public HTML news and downloadable application guides; program-specific submission",
+      "applicant_types": [
+        "nonprofits",
+        "other Commerce-program eligible entities"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. FY2026 CSBG call for 501(c)(3) low-income service organizations closed August 28, 2026 per follow-up notice. News stream is mixed, requires notice/status extraction; no comprehensive territorial portal verified. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://doc.as.gov/news",
+        "https://doc.as.gov/post/public-notice-fy2026-csbg-funding-opportunity"
+      ],
+      "source_id": "us-as-54",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mp-55",
+      "jurisdiction": "MP",
+      "name": "CNMI Opioid Proceeds Council funding",
+      "url": "https://www.cnmioag.org/cnmi-opc/",
+      "source_kind": "agency_opportunity_listing",
+      "access_mode": "Public HTML; downloadable NOFO PDF",
+      "applicant_types": [
+        "eligible opioid-remediation organizations",
+        "public entities",
+        "other NOFO-eligible applicants"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official OAG page has open NOFO posted September 1, 2026, deadline October 16, 2026; settlement-funded grants. Applicant list must be resolved from NOFO; no general all-sector territorial portal verified. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://www.cnmioag.org/cnmi-opc/"
+      ],
+      "source_id": "us-mp-55",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-mp-56",
+      "jurisdiction": "MP",
+      "name": "CNMI agriculture Micro-Grants for Food Security guidance",
+      "url": "https://dlnr.cnmi.gov/assets/docs/ag/mgfs/mgfs-cnmi-application-guideline.pdf",
+      "source_kind": "official_program_guidance",
+      "access_mode": "Public downloadable PDF application guidance",
+      "applicant_types": [
+        "individuals",
+        "eligible food-security organizations"
+      ],
+      "verification_status": "official_source_content_verified",
+      "notes": "Retrieved 2026-10-01. Official DLNR guidance establishes food-security microgrant route. Observed application deadline October 15, 2025 is historical; next cycle needs verification. Complements organizational opioid funding, not an open 2026 call. Unless explicitly documented here, public API/RSS/bulk export not verified; HTML/PDF extraction requires adapter testing. Applicant categories are source coverage indicators, not eligibility guarantees.",
+      "evidence_urls": [
+        "https://dlnr.cnmi.gov/assets/docs/ag/mgfs/mgfs-cnmi-application-guideline.pdf"
+      ],
+      "source_id": "us-mp-56",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-in-state-gateway",
+      "jurisdiction": "IN",
+      "name": "Indiana State Agency Grant Opportunities",
+      "url": "https://www.in.gov/sba/grants/resources-for-subrecipients/state-agency-grant-opportunities/",
+      "source_kind": "state_opportunity_gateway",
+      "access_mode": "Public solicitation gateway; Euna/eCivis account to apply",
+      "applicant_types": [
+        "nonprofits",
+        "public agencies",
+        "schools",
+        "higher education",
+        "other program-eligible organizations"
+      ],
+      "verification_status": "official_gateway_and_application_guide_verified",
+      "notes": "Retrieved 2026-10-01. Official State Budget Agency page and applicant guide verify selecting solicitations publicly, then logging in to apply. Embedded table extraction not tested. No public API/RSS/bulk export verified. Agency eligibility remains solicitation-specific.",
+      "evidence_urls": [
+        "https://www.in.gov/sba/grants/resources-for-subrecipients/state-agency-grant-opportunities/",
+        "https://www.in.gov/sba/files/Subrecipients_Applying_for_Funding1.pdf",
+        "https://www.in.gov/dnr/forestry/programs/community-and-urban-forestry/grants"
+      ],
+      "source_id": "us-in-state-gateway",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "us-tx-esbd",
+      "jurisdiction": "TX",
+      "name": "Texas ESBD Grant Opportunities",
+      "url": "https://www.txsmartbuy.gov/esbd-grants",
+      "source_kind": "state_opportunity_portal",
+      "access_mode": "Officially documented public search; research fetch returned 404",
+      "applicant_types": [
+        "nonprofits",
+        "businesses",
+        "public agencies",
+        "schools",
+        "higher education",
+        "other program-eligible organizations"
+      ],
+      "verification_status": "official_link_and_scope_verified_endpoint_fetch_failed",
+      "notes": "Retrieved 2026-10-01. Comptroller identifies this exact link as centralized state grant opportunity search. Grant standards v2.1 document statewide Texas.gov eGrants replacement since fall 2024, distinct from Governor PSO eGrants. Exact linked endpoint returned 404 to research fetch, so require browser/live endpoint validation before adapter implementation. Do not substitute state grant award-transparency listing. API/RSS/bulk export not verified.",
+      "evidence_urls": [
+        "https://comptroller.texas.gov/purchasing/grant-management/",
+        "https://comptroller.texas.gov/purchasing/docs/grant-management-printv2.1.pdf",
+        "https://www.txsmartbuy.gov/esbd-grants"
+      ],
+      "source_id": "us-tx-esbd",
+      "applicant_types_exhaustive": false,
+      "retrieved_date": "2026-10-01"
+    },
+    {
+      "id": "grants-gov",
+      "source_id": "grants-gov",
+      "jurisdiction": "US",
+      "name": "Grants.gov federal opportunities",
+      "url": "https://www.grants.gov/",
+      "source_kind": "official_federal_opportunity_feed",
+      "access_mode": "public_no_key_search_detail_api",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Bounded public API response verified in federal research. Search/detail adapter does not establish complete federal inventory; read notice and amendments. XML extracts/RSS documented separately.",
+      "evidence_urls": [
+        "https://www.grants.gov/api/api-guide",
+        "https://www.grants.gov/xml-extract",
+        "https://www.grants.gov/connect/rss-feeds"
+      ],
+      "adapter": "grants-gov",
+      "base_url": "https://api.grants.gov/v1/api"
+    },
+    {
+      "id": "simpler-grants",
+      "source_id": "simpler-grants",
+      "jurisdiction": "US",
+      "name": "Simpler.Grants.gov",
+      "url": "https://simpler.grants.gov/",
+      "source_kind": "official_federal_opportunity_feed",
+      "access_mode": "public_web_keyed_api_documentation",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Overlaps Grants.gov; identity crosswalk required. No adapter configured here; authenticated API not tested.",
+      "evidence_urls": [
+        "https://wiki.simpler.grants.gov/product/api"
+      ]
+    },
+    {
+      "id": "sam-assistance",
+      "source_id": "sam-assistance",
+      "jurisdiction": "US",
+      "name": "SAM.gov Assistance Listings",
+      "url": "https://sam.gov/assistance-listings",
+      "source_kind": "official_federal_program_directory",
+      "access_mode": "public_web_keyed_api",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Program descriptions, not exclusively open application opportunities; API key access not tested.",
+      "evidence_urls": [
+        "https://open.gsa.gov/api/assistance-listings-api/"
+      ]
+    },
+    {
+      "id": "nih-guide",
+      "source_id": "nih-guide",
+      "jurisdiction": "US",
+      "name": "NIH Guide notices",
+      "url": "https://grants.nih.gov/funding/nih-guide-for-grants-and-contracts",
+      "source_kind": "official_federal_policy_notice_source",
+      "access_mode": "public_html_rss",
+      "applicant_types": [
+        "research_institution",
+        "higher_education",
+        "business"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "FY2026 NIH policy makes Grants.gov the official NOFO source. Use NIH Guide for policy/informational notices; legacy XML is not complete new-opportunity coverage.",
+      "evidence_urls": [
+        "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-25-143.html",
+        "https://grants.nih.gov/funding/nih-guide-for-grants-and-contracts/subscribe"
+      ]
+    },
+    {
+      "id": "usaspending",
+      "source_id": "usaspending",
+      "jurisdiction": "US",
+      "name": "USAspending",
+      "url": "https://www.usaspending.gov/",
+      "source_kind": "official_historical_award_data",
+      "access_mode": "public_web_api",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Award/spending research only; no inference of open calls, deadlines or applicant eligibility.",
+      "evidence_urls": [
+        "https://api.usaspending.gov/"
+      ]
+    },
+    {
+      "id": "cof-community-foundations",
+      "source_id": "cof-community-foundations",
+      "jurisdiction": "US",
+      "name": "Council on Foundations Community Foundation Locator",
+      "url": "https://cof.org/page/community-foundation-locator",
+      "source_kind": "nonprofit_administrator_directory",
+      "access_mode": "public_web_directory",
+      "applicant_types": [
+        "nonprofit",
+        "individual"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Locate foundation administrators, then inspect competitive programs. Scholarships, donor-advised and invitation-only funds differ. Bulk reuse rights not established.",
+      "evidence_urls": [
+        "https://cof.org/page/community-foundation-locator"
+      ]
+    },
+    {
+      "id": "hud-grantees",
+      "source_id": "hud-grantees",
+      "jurisdiction": "US",
+      "name": "HUD Exchange grantee directory",
+      "url": "https://www.hudexchange.info/grantees/",
+      "source_kind": "official_grantee_directory",
+      "access_mode": "public_web_directory",
+      "applicant_types": [
+        "government",
+        "nonprofit"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Routes to CDBG/ESG/HOME administrators; recipient/award information is not a live subaward feed. Catalogue freshness is not notice freshness.",
+      "evidence_urls": [
+        "https://catalog.data.gov/dataset/hud-exchange-grantee-database",
+        "https://www.hudexchange.info/grantees/"
+      ]
+    },
+    {
+      "id": "workforce-boards",
+      "source_id": "workforce-boards",
+      "jurisdiction": "US",
+      "name": "CareerOneStop workforce board directory",
+      "url": "https://cloudfront.careeronestop.org/LocalHelp/WorkforceDevelopment/find-workforce-development-boards-help.aspx",
+      "source_kind": "official_administrator_directory",
+      "access_mode": "public_web_authenticated_api_documented",
+      "applicant_types": [
+        "business",
+        "individual",
+        "training_provider"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Local boards route to employer reimbursement and worker/provider programs. Board presence does not prove available funding; distinguish applicant, beneficiary and vendor.",
+      "evidence_urls": [
+        "https://cloudfront.careeronestop.org/LocalHelp/WorkforceDevelopment/find-workforce-development-boards-help.aspx",
+        "https://api.careeronestop.org/api-explorer/"
+      ]
+    },
+    {
+      "id": "usda-rd-offices",
+      "source_id": "usda-rd-offices",
+      "jurisdiction": "US",
+      "name": "USDA Rural Development state offices",
+      "url": "https://www.rd.usda.gov/about-rd/state-offices",
+      "source_kind": "official_administrator_directory",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "government",
+        "nonprofit",
+        "business",
+        "individual",
+        "tribal_government"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "State offices route to program-specific notices and geography. This directory is not a list of open grants.",
+      "evidence_urls": [
+        "https://www.rd.usda.gov/about-rd/state-offices"
+      ]
+    },
+    {
+      "id": "usda-rbdg",
+      "source_id": "usda-rbdg",
+      "jurisdiction": "US",
+      "name": "USDA Rural Business Development Grants",
+      "url": "https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants",
+      "source_kind": "official_federal_program",
+      "access_mode": "public_html_state_notices",
+      "applicant_types": [
+        "government",
+        "nonprofit",
+        "tribal_government"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "2026 window shown closed in source research. For-profit businesses and individuals excluded as direct grantees; rural business benefit does not imply direct eligibility.",
+      "evidence_urls": [
+        "https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants"
+      ]
+    },
+    {
+      "id": "nifa-land-grants",
+      "source_id": "nifa-land-grants",
+      "jurisdiction": "US",
+      "name": "NIFA Land-Grant University Directory",
+      "url": "https://www.nifa.usda.gov/grants/land-grant-university-website-directory",
+      "source_kind": "official_administrator_directory",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "higher_education",
+        "researcher",
+        "farmer",
+        "business"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Routes to 1862/1890/1994 institutions and extension. Assistance and institution existence are not open funding; internal eligibility/deadlines vary.",
+      "evidence_urls": [
+        "https://www.nifa.usda.gov/grants/land-grant-university-website-directory"
+      ]
+    },
+    {
+      "id": "sare-grants",
+      "source_id": "sare-grants",
+      "jurisdiction": "US",
+      "name": "SARE grants and regional routing",
+      "url": "https://www.sare.org/grants/",
+      "source_kind": "federally_supported_regional_program_directory",
+      "access_mode": "public_html_regional_calls",
+      "applicant_types": [
+        "farmer",
+        "researcher",
+        "educator",
+        "graduate_student"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Four regional competitions differ in applicant class and rules. Funded-project search is historical rather than an open-call list.",
+      "evidence_urls": [
+        "https://www.sare.org/grants/",
+        "https://www.sare.org/where-we-work/"
+      ]
+    },
+    {
+      "id": "nea-state-regional",
+      "source_id": "nea-state-regional",
+      "jurisdiction": "US",
+      "name": "NEA State and Regional Arts Organizations",
+      "url": "https://www.arts.gov/state-and-regional-arts-organizations",
+      "source_kind": "official_administrator_directory",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "artist",
+        "nonprofit",
+        "education",
+        "government"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Follow state/regional agencies to current regrant notices. Federal partnership allocation is not a direct award opportunity for every artist.",
+      "evidence_urls": [
+        "https://www.arts.gov/state-and-regional-arts-organizations"
+      ]
+    },
+    {
+      "id": "neh-councils",
+      "source_id": "neh-councils",
+      "jurisdiction": "US",
+      "name": "NEH State and Jurisdictional Humanities Councils",
+      "url": "https://www.neh.gov/about/state-humanities-councils",
+      "source_kind": "official_administrator_directory",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "nonprofit",
+        "education",
+        "individual"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Council pages govern regranting; verify pauses, calendars and funded cycles locally. Existence does not establish an open call.",
+      "evidence_urls": [
+        "https://www.neh.gov/about/state-humanities-councils"
+      ]
+    },
+    {
+      "id": "bia-tribal-directory",
+      "source_id": "bia-tribal-directory",
+      "jurisdiction": "US",
+      "name": "BIA Tribal Leaders Directory",
+      "url": "https://www.bia.gov/service/tribal-leaders-directory",
+      "source_kind": "official_government_directory",
+      "access_mode": "public_html_map_csv_excel_documented",
+      "applicant_types": [
+        "tribal_government",
+        "native_organization"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Route by government identity/official website; directory is not funding or eligibility. Recognition, membership and Native-led status are separate. Personal contacts are not needed for discovery.",
+      "evidence_urls": [
+        "https://www.bia.gov/service/tribal-leaders-directory"
+      ]
+    },
+    {
+      "id": "first-nations",
+      "source_id": "first-nations",
+      "jurisdiction": "US",
+      "name": "First Nations Development Institute grantseeker resources",
+      "url": "https://www.firstnations.org/grantseeker-resource-frequently-asked-questions/",
+      "source_kind": "private_funder_program_directory",
+      "access_mode": "public_html_rfps_account_for_application",
+      "applicant_types": [
+        "tribal_government",
+        "native_organization",
+        "nonprofit"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Applications follow published RFP cycles and program restrictions. Public discovery does not require registration; no account access tested.",
+      "evidence_urls": [
+        "https://www.firstnations.org/grantseeker-resource-frequently-asked-questions/"
+      ]
+    },
+    {
+      "id": "native-philanthropy",
+      "source_id": "native-philanthropy",
+      "jurisdiction": "US",
+      "name": "Native Americans in Philanthropy Indigenous Data",
+      "url": "https://nativephilanthropy.org/indigenous-data",
+      "source_kind": "historical_philanthropic_funding_directory",
+      "access_mode": "public_web_map",
+      "applicant_types": [
+        "native_organization",
+        "nonprofit"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Historical funding-map leads, not open calls. Source says map does not distinguish Native-led from non-Native-led recipients.",
+      "evidence_urls": [
+        "https://nativephilanthropy.org/indigenous-data"
+      ]
+    },
+    {
+      "id": "dsire",
+      "source_id": "dsire",
+      "jurisdiction": "US",
+      "name": "DSIRE energy incentives data and tools",
+      "url": "https://dsireusa.org/resources/data-and-tools/",
+      "source_kind": "specialist_incentive_directory",
+      "access_mode": "public_web_api_documentation_unreconciled",
+      "applicant_types": [
+        "business",
+        "individual",
+        "government",
+        "nonprofit"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Mixed rebates/loans/tax benefits/grants. Legacy JSON/XML routes and newer API docs need reconciliation; auth, freshness, quota and reuse rights unverified. No DSIRE adapter here.",
+      "evidence_urls": [
+        "https://dsireusa.org/resources/data-and-tools/",
+        "https://docs.dsireusa.org/"
+      ]
+    },
+    {
+      "id": "walmart-spark-good",
+      "source_id": "walmart-spark-good",
+      "jurisdiction": "US",
+      "name": "Walmart Spark Good Facility Giving",
+      "url": "https://www.walmart.org/what-we-do/strengthening-community/spark-good/spark-good-facility-giving",
+      "source_kind": "corporate_grant_program",
+      "access_mode": "public_html_verified_organization_application",
+      "applicant_types": [
+        "nonprofit"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Local nonprofit giving, not a general for-profit grant. Check current cycle, geography and verified-organization requirements.",
+      "evidence_urls": [
+        "https://www.walmart.org/what-we-do/strengthening-community/spark-good/spark-good-facility-giving",
+        "https://www.walmart.org/how-we-give/grant-eligibility"
+      ]
+    },
+    {
+      "id": "hello-alice",
+      "source_id": "hello-alice",
+      "jurisdiction": "US",
+      "name": "Hello Alice grants and funding",
+      "url": "https://www.helloalice.com/small-business-grants-and-funding",
+      "source_kind": "private_business_funding_directory",
+      "access_mode": "public_web_application_accounts_vary",
+      "applicant_types": [
+        "small_business"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Mixes grants, accelerators and lending; inspect sponsor rules and current cycle. No public licensed catalogue API established.",
+      "evidence_urls": [
+        "https://www.helloalice.com/small-business-grants-and-funding"
+      ]
+    },
+    {
+      "id": "arch-grants",
+      "source_id": "arch-grants",
+      "jurisdiction": "US",
+      "name": "Arch Grants program FAQ",
+      "url": "https://archgrants.org/programs/faqs/",
+      "source_kind": "private_business_competition",
+      "access_mode": "public_html",
+      "applicant_types": [
+        "business",
+        "startup"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Competition restrictions can include relocation and milestones; national applicant reach is not nationwide unrestricted use. Verify current rules.",
+      "evidence_urls": [
+        "https://archgrants.org/programs/faqs/"
+      ]
+    },
+    {
+      "id": "grantmakers-io",
+      "source_id": "grantmakers-io",
+      "jurisdiction": "US",
+      "name": "Grantmakers.io foundation prospecting",
+      "url": "https://www.grantmakers.io/",
+      "source_kind": "historical_foundation_prospect_directory",
+      "access_mode": "public_web_source_projects",
+      "applicant_types": [
+        "nonprofit"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "990-PF history nominates funders; never implies current invitations or deadlines. Repository code licensing does not establish current opportunity coverage.",
+      "evidence_urls": [
+        "https://github.com/grantmakers"
+      ]
+    },
+    {
+      "id": "submittable-discover",
+      "source_id": "submittable-discover",
+      "jurisdiction": "US",
+      "name": "Submittable Discover",
+      "url": "https://www.submittable.com/discover",
+      "source_kind": "third_party_opportunity_marketplace",
+      "access_mode": "public_web_account_features",
+      "applicant_types": [
+        "nonprofit",
+        "individual",
+        "artist",
+        "business"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "primary_source_documentation_reviewed",
+      "retrieved_date": "2026-10-01",
+      "notes": "Mixes grants, contests, scholarships and creative calls. Opt-in marketplace is not complete; customer management API is not universal discovery access.",
+      "evidence_urls": [
+        "https://www.submittable.com/discover",
+        "https://submittable.help/en/articles/904853-how-can-i-find-and-follow-opportunities-on-submittable"
+      ]
+    },
+    {
+      "id": "commongrants-pa",
+      "source_id": "commongrants-pa",
+      "jurisdiction": "PA",
+      "name": "AgileSix CommonGrants PA prototype feed",
+      "url": "https://pa.api.cg.a6lab.ai",
+      "base_url": "https://pa.api.cg.a6lab.ai",
+      "adapter": "common-grants",
+      "source_kind": "third_party_prototype_opportunity_feed",
+      "access_mode": "public_common_grants_api",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "prototype_feed_configured_live_collection_not_asserted",
+      "retrieved_date": "2026-10-01",
+      "evidence_urls": [
+        "https://pa.api.cg.a6lab.ai"
+      ],
+      "notes": "Third-party normalized prototype feed, not an official state endpoint. Registry configuration is not proof of collection, freshness, source completeness or eligibility. Review original state notices; overlaps official registry entries and must not inflate coverage."
+    },
+    {
+      "id": "commongrants-ca",
+      "source_id": "commongrants-ca",
+      "jurisdiction": "CA",
+      "name": "AgileSix CommonGrants CA prototype feed",
+      "url": "https://ca.api.cg.a6lab.ai",
+      "base_url": "https://ca.api.cg.a6lab.ai",
+      "adapter": "common-grants",
+      "source_kind": "third_party_prototype_opportunity_feed",
+      "access_mode": "public_common_grants_api",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "prototype_feed_configured_live_collection_not_asserted",
+      "retrieved_date": "2026-10-01",
+      "evidence_urls": [
+        "https://ca.api.cg.a6lab.ai"
+      ],
+      "notes": "Third-party normalized prototype feed, not an official state endpoint. Registry configuration is not proof of collection, freshness, source completeness or eligibility. Review original state notices; overlaps official registry entries and must not inflate coverage."
+    },
+    {
+      "id": "commongrants-wa",
+      "source_id": "commongrants-wa",
+      "jurisdiction": "WA",
+      "name": "AgileSix CommonGrants WA prototype feed",
+      "url": "https://wa.api.cg.a6lab.ai",
+      "base_url": "https://wa.api.cg.a6lab.ai",
+      "adapter": "common-grants",
+      "source_kind": "third_party_prototype_opportunity_feed",
+      "access_mode": "public_common_grants_api",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "prototype_feed_configured_live_collection_not_asserted",
+      "retrieved_date": "2026-10-01",
+      "evidence_urls": [
+        "https://wa.api.cg.a6lab.ai"
+      ],
+      "notes": "Third-party normalized prototype feed, not an official state endpoint. Registry configuration is not proof of collection, freshness, source completeness or eligibility. Review original state notices; overlaps official registry entries and must not inflate coverage."
+    },
+    {
+      "id": "commongrants-md",
+      "source_id": "commongrants-md",
+      "jurisdiction": "MD",
+      "name": "AgileSix CommonGrants MD prototype feed",
+      "url": "https://md.api.cg.a6lab.ai",
+      "base_url": "https://md.api.cg.a6lab.ai",
+      "adapter": "common-grants",
+      "source_kind": "third_party_prototype_opportunity_feed",
+      "access_mode": "public_common_grants_api",
+      "applicant_types": [
+        "all"
+      ],
+      "applicant_types_exhaustive": false,
+      "verification_status": "prototype_feed_configured_live_collection_not_asserted",
+      "retrieved_date": "2026-10-01",
+      "evidence_urls": [
+        "https://md.api.cg.a6lab.ai"
+      ],
+      "notes": "Third-party normalized prototype feed, not an official state endpoint. Registry configuration is not proof of collection, freshness, source completeness or eligibility. Review original state notices; overlaps official registry entries and must not inflate coverage."
+    }
+  ]
+}

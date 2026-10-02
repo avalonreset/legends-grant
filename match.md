@@ -1,44 +1,31 @@
 # match
 
-Turn a vault-mapped business into a ranked grant shortlist. This is what
-beats a generic "get me a grant" ask: the vault already knows the business,
-so matching replaces infinite searching.
+Match verified opportunity cycles to an applicant and project. Matching is
+currently an agent workflow, not an implemented automated eligibility engine.
 
-## Intake (from vault first, ask only for gaps)
+## Intake
 
-Pull from the vault business note (see `vault-map.md`) before asking:
+Read authorized context first. Record entity, project and service geography,
+purpose, beneficiaries, budget, timing and available match/upfront cash. Ask
+for size, ownership, registrations or credentials only when relevant. Keep
+private applicant data outside the shared public evidence store.
 
-- Must-haves: legal name, entity type, state, NAICS, employees, revenue,
-  years in business, ownership flags (woman, veteran, minority, rural,
-  tribal), SAM.gov UEI status, use of funds, amount needed.
-- Multi-client: one profile per client under `profiles/`; shared
-  `sources.md` and state files serve all of them. Never mix client facts.
-- Gaps: ask once for missing must-haves, then work. Never invent them.
+## Gate before ranking
 
-## Order of battle
+Use `qualify.md`. Separate confirmed exclusions, unresolved requirements and
+plausible candidates. An attractive amount cannot compensate for an ineligible
+entity. Applicant, beneficiary, intermediary and paid vendor are different roles.
 
-1. Federal API sweep (`find.md` Tier 1): grants.gov keyword from NAICS
-   plus use-of-funds terms, `oppStatuses: posted`; forecasts second.
-2. Nexus pass: applicant state file + STEP / USDA-RBDG geography check.
-3. Private pass: `private-rolling.md` programs whose who-it-fits flags
-   intersect the profile.
-4. Funder-history pass (USAspending): who got funded for what, to calibrate
-   ask size and narrative angle.
+Rank remaining candidates by evidenced mission/activity fit, financial value,
+cash-flow feasibility, realistic preparation time, administrative burden and
+application access. Show the basis and uncertainty. Do not invent probability
+of winning or treat an arbitrary score as one. Unresolved candidates remain
+separate from verified fits, with the next fact needed to decide.
 
-## Scoring (0-12, show the math)
+## Search and output
 
-- Eligibility fit 0-4: entity + geography + NAICS/size + use-of-funds.
-- Deadline realism 0-3: days left vs package effort.
-- Award fit 0-3: amount vs need, match/cost-share feasible.
-- Channel ease 0-2: API/portal/email (2), human-click portal (1),
-  mail/wet-sign (0, still listed with prep plan).
-
-Rank by score, then deadline. Anything scoring 0 on eligibility is OUT
-with the notice quote, not silently dropped. Top candidates get
-opportunity notes; the rest stay a ranked list with one-line reasons.
-
-## Output contract
-
-Shortlist table plus verdict per candidate plus next action
-(qualify-detail, draft-now, submit-with-auth, human-step).
-Link each row to its opportunity note once written.
+Follow `find.md` with no mandatory source order. Award history can inform
+funder fit but does not prove a current opportunity. Produce a sourced shortlist
+with eligibility state, deadline, match/reimbursement terms, outstanding facts,
+expected application effort and next action. Retain rejected candidates with
+the specific disqualifying evidence to prevent repeated wasted work.
