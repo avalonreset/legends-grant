@@ -11,6 +11,12 @@ dependencies = []
 readme = "README.md"
 license = "MIT"
 
+[project.urls]
+Repository = "https://github.com/avalonreset/legends-grant"
+Documentation = "https://github.com/avalonreset/legends-grant/blob/main/docs/RUNTIME.md"
+Issues = "https://github.com/avalonreset/legends-grant/issues"
+Releases = "https://github.com/avalonreset/legends-grant/releases"
+
 [project.optional-dependencies]
 pdf = ["pypdf>=6,<7"]
 

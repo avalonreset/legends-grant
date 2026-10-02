@@ -2,6 +2,13 @@
 
 All notable changes to `legends-grant` will be documented here.
 
+## 0.2.1 - 2026-10-02
+
+- Add prominent README credits for upstream feed operators, design references,
+  federal data and the optional PDF dependency, with explicit reuse boundaries.
+- Include repository, documentation, issues and release links in package metadata.
+- Documentation and packaging only; discovery and qualification behavior is unchanged.
+
 ## 0.2.0 - 2026-10-02
 
 - Replaces federal-first routing with applicant/project-led nationwide discovery.

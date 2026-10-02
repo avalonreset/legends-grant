@@ -5,7 +5,7 @@ Scope includes businesses, nonprofits, governments, tribes, researchers and
 individuals, across federal, state, local and private funding. Source selection
 follows the applicant and project, with no mandatory federal-first search.
 
-## What v0.2.0 does
+## What v0.2.1 does
 
 - A researched nationwide source registry, including all 50 states, DC and five
   territories. Registry coverage is not exhaustive opportunity coverage.
@@ -69,6 +69,32 @@ profiles or credentials. See [runtime guide](docs/RUNTIME.md).
 
 Applicant context can come from `legends-empire` or another authorized source.
 Keep each client's private facts separate from shared public grant evidence.
+
+## Credits and upstream projects
+
+Thank you to the maintainers whose public data services and open-source work
+made this release possible. We distinguish services used by the runtime from
+projects consulted during design:
+
+| Project or service | Contribution to this project |
+|---|---|
+| [Agile Six CommonGrants grant seeker](https://github.com/agilesix/cg-mcp-grant-seeker), with its [California](https://github.com/agilesix/cg-api-ca), [Pennsylvania](https://github.com/agilesix/cg-api-pa), [Washington](https://github.com/agilesix/cg-api-wa) and [Maryland](https://github.com/agilesix/cg-api-md) adapters | Operates the four public state feeds consumed by our Python adapter. Their collection infrastructure provides the data; we did not build those upstream feeds. |
+| [CommonGrants](https://commongrants.org/) and [HHS Simpler.Grants.gov](https://github.com/HHS/simpler-grants-gov) | The interchange format used by those feeds, and a reference for understanding normalization and preserving original source evidence. |
+| [OpenProse grant-finder](https://github.com/openprose/grant-finder) | Design reference for evidence ledgers, structured research packets and reproducible collection. Its Go implementation is not incorporated. |
+| [cyanheads Grants.gov MCP](https://github.com/cyanheads/grantsgov-mcp-server) and [GSA-TTS Grants.gov MCP](https://github.com/GSA-TTS/mcp-server-grants-gov) | References for federal API fields, filtering, validation and pagination. Their server implementations are not incorporated. |
+| [Grants.gov](https://www.grants.gov/) | Original federal opportunity data, retrieved directly through its public API. |
+| [pypdf](https://github.com/py-pdf/pypdf) | Optional installed dependency that performs PDF text extraction. |
+
+No implementation code from the grant-discovery projects above is vendored in
+this release. Feed consumption, design references and the optional PDF dependency
+are different forms of reuse. This project is independently maintained; these
+credits do not imply partnership, endorsement or official state verification.
+Our MIT license covers our code, not ownership of upstream data or documents;
+upstream materials retain their own terms and notices.
+
+The [source research and adoption decisions](docs/SOURCE-RESEARCH.md#github-reuse-and-verified-third-party-state-feeds)
+record reviewed revisions, licensing observations and projects considered for
+future work, including Grantmakers and Nonprofit Open Data Collective.
 
 ## Agent setup (via `cto-legends`)
 
