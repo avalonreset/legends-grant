@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "opportunity_id": "synthetic-kitchen-2027",
+  "funder_name": "SYNTHETIC Riverside Neighborhood Fund (fictional)",
+  "program": "SYNTHETIC Neighborhood Equipment Grants (fictional)",
+  "questions": [
+    {
+      "id": "need",
+      "prompt": "Describe the community need and who benefits.",
+      "required": true,
+      "max_words": 250
+    },
+    {
+      "id": "plan",
+      "prompt": "Describe the project plan, timeline, and who does the work.",
+      "required": true,
+      "max_words": 300
+    },
+    {
+      "id": "budget-narrative",
+      "prompt": "Explain the budget and how grant funds will be used.",
+      "required": true,
+      "max_words": 200
+    }
+  ],
+  "attachments_required": [
+    {
+      "id": "501c3-letter",
+      "description": "IRS determination letter proving nonprofit status.",
+      "required": true
+    },
+    {
+      "id": "equipment-quote",
+      "description": "Vendor quote for the two ovens.",
+      "required": true
+    }
+  ],
+  "rubric": [
+    {
+      "id": "need-fit",
+      "description": "Need is specific to the neighborhood and supported by operating history."
+    },
+    {
+      "id": "plan-clarity",
+      "description": "Plan names the work, the timeline, and the people responsible."
+    },
+    {
+      "id": "budget-alignment",
+      "description": "Budget lines match the narrative and respect category rules."
+    }
+  ],
+  "limits": {
+    "max_total_words": 700,
+    "max_request": "25000.00",
+    "unallowable_categories": [
+      "alcohol",
+      "lobbying"
+    ],
+    "notes": "SYNTHETIC limits for the worked example."
+  },
+  "project": {
+    "title": "SYNTHETIC: Harborview Community Kitchen oven project",
+    "summary": "SYNTHETIC: Add oven capacity projected to add 40 meal seats per service, toward serving a projected 15000 meals in year one, with 400 volunteer hours committed as match."
+  },
+  "budget": {
+    "currency": "USD",
+    "total_requested": "15000.00",
+    "total_project": "18000.00",
+    "use_of_funds": "SYNTHETIC: Grant funds buy two convection ovens, installation, and training per the planned-budget premise. The board match covers volunteer hours. Quarterly spending reports track spending.",
+    "lines": [
+      {
+        "id": "ovens",
+        "label": "Two convection ovens",
+        "category": "equipment",
+        "amount": "12000.00",
+        "funding_source": "grant"
+      },
+      {
+        "id": "install",
+        "label": "Installation",
+        "category": "services",
+        "amount": "2500.00",
+        "funding_source": "grant"
+      },
+      {
+        "id": "training",
+        "label": "Training",
+        "category": "training",
+        "amount": "500.00",
+        "funding_source": "grant"
+      },
+      {
+        "id": "volunteer-match",
+        "label": "Volunteer hours (board match)",
+        "category": "in-kind",
+        "amount": "3000.00",
+        "funding_source": "match"
+      }
+    ]
+  },
+  "answers": [
+    {
+      "question_id": "need",
+      "text": "SYNTHETIC DRAFT: Harborview Community Kitchen began serving meals in 2019. It operates from a 900 square foot rented hall. In 2025 the kitchen served about 12400 meals. The plan projects serving 15000 meals in the first grant year, with new ovens projected to add 40 meal seats per service.",
+      "fact_refs": [
+        "org-founded",
+        "meals-2025",
+        "kitchen-size",
+        "year1-projection",
+        "seat-expansion"
+      ]
+    },
+    {
+      "question_id": "plan",
+      "text": "SYNTHETIC DRAFT: The project adds oven capacity projected to add 40 meal seats per service. The board commits 400 volunteer hours as match in the grant year. The kitchen commits to quarterly spending reports to the funder.",
+      "fact_refs": [
+        "seat-expansion",
+        "match-pledge",
+        "report-commitment"
+      ]
+    },
+    {
+      "question_id": "budget-narrative",
+      "text": "SYNTHETIC DRAFT: The grant request is 15000.00 USD: two convection ovens at 12000.00, installation at 2500.00, and training at 500.00. The board commits 400 volunteer hours as match, budgeted at 3000.00, for a total project of 18000.00. The kitchen commits to quarterly spending reports to the funder.",
+      "fact_refs": [
+        "budget-premise",
+        "match-pledge",
+        "report-commitment"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "attachment_id": "501c3-letter",
+      "status": "missing"
+    },
+    {
+      "attachment_id": "equipment-quote",
+      "status": "missing"
+    }
+  ],
+  "shared_evidence": {
+    "fact_ids": [
+      "org-founded",
+      "kitchen-size",
+      "seat-expansion",
+      "report-commitment",
+      "budget-premise"
+    ]
+  },
+  "substantive_review": {
+    "status": "in_review",
+    "reviewer": "A. Reviewer (synthetic)",
+    "reviewed_at": null,
+    "notes": "First substantive pass in progress; entailment and rubric scoring are not finished."
+  }
+}

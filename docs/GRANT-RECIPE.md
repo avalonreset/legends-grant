@@ -11,8 +11,10 @@ This checks local readiness; it makes no live provider requests.
   and `docs/COVERAGE.md`.
 - Run collection: `docs/RUNTIME.md`. Choose sources by applicant and purpose.
 - Eligibility: `qualify.md`; verify current official notices and attachments.
-- Applications: `apply.md` and `submit-lanes.md`. Draft within the request;
-  submission requires authorization for that external action and a receipt.
+- Applications: `apply.md`, `docs/PROPOSAL-WRITING.md` and
+  `submit-lanes.md`. Draft actual narrative within the request,
+  with cited facts and visible gaps; submission requires authorization
+  for that external action and a receipt.
 
 No federal-first ordering. Federal, state, local, tribal and private sources
 can all be the first useful route. Existing `states/` notes are background;

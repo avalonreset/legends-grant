@@ -1,4 +1,37 @@
-# v0.2.0 verification
+# Verification
+
+## v0.3.0 proposal workbench
+
+Reverified October 3, 2026. The proposal commands scaffold, mechanically check and
+render agent-written drafts; they do not generate narrative or establish that a
+claim is supported. The writing recipe supplies the drafting and review process.
+
+Tests cover missing answers and attachments, word limits, citation IDs, decimal
+budget arithmetic, placeholders, advisory claim mentions, private evidence
+separation and output paths that would overwrite inputs or SQLite databases.
+The shipped synthetic example deliberately retains missing required attachments.
+A successful command exit is not a passing proposal assessment.
+
+The [proposal battle report](PROPOSAL-BATTLE-TEST.md) records actual failures and
+corrections. Early agent drafts invented details despite valid citation IDs;
+review caught those errors and prompted explicit claim-to-source checks. A
+constructed bad draft is an adversarial illustration, not a measured comparison
+against another model. No award-success or writing-superiority result is claimed.
+
+The full suite runs 246 tests on Windows Python 3.11, with two filesystem-related
+symlink cases skipped where creation privileges are unavailable. The Muse worker
+also ran the suite on Linux successfully. The existing discovery and qualification
+checks remain part of the full suite.
+The resumed Windows run completed 246 tests: 244 passed and two skipped.
+A rebuilt wheel installed into a clean environment reports version 0.3.0 and
+successfully checks and renders the synthetic proposal outside the checkout.
+Those outputs match the shipped examples after newline normalization.
+Package inspection confirmed proposal code in the wheel, writing instructions
+and examples in the source archive, and upstream credits in package metadata.
+Reproduce the suite and synthetic proposal commands in [RUNTIME.md](RUNTIME.md).
+The release tag and CI identify the final tested source and platform results.
+
+## v0.2.0 discovery and evidence verification
 
 Verified October 2, 2026. This release adds executable discovery and evidence
 workflows to the previous Markdown-led module. Tests measure the contracts below;

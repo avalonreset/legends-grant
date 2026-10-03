@@ -34,8 +34,51 @@ def write(value, path=None):
         print(text, end="")
 
 
+EVIDENCE_DB_SUFFIXES = (".sqlite", ".sqlite3", ".db")
+
+
+def refuse_unsafe_output(output, inputs):
+    """Reject proposal outputs that overwrite inputs or an evidence database.
+
+    Existing paths are compared by file identity so hardlink aliases are
+    caught; the resolved target suffix and SQLite magic bytes catch
+    symlink-to-database and extensionless database targets. The target is
+    only read, never modified, and refused outputs are left untouched.
+    """
+    if not output:
+        return
+    target = Path(output)
+    try:
+        resolved = target.resolve()
+    except OSError:
+        raise InputError("Proposal output path cannot be resolved.")
+    if resolved.suffix.lower() in EVIDENCE_DB_SUFFIXES:
+        raise InputError("Proposal output must not target a public evidence database file.")
+    if target.exists() and target.is_file():
+        try:
+            with target.open("rb") as handle:
+                magic = handle.read(16)
+        except OSError:
+            raise InputError("Proposal output target cannot be inspected.")
+        if magic == b"SQLite format 3\x00":
+            raise InputError("Proposal output must not target a public evidence database file.")
+    for other in inputs:
+        if not other:
+            continue
+        try:
+            if resolved == Path(other).resolve():
+                raise InputError("Proposal output must not overwrite its own input file.")
+        except OSError:
+            pass
+        try:
+            if target.exists() and Path(other).exists() and target.samefile(other):
+                raise InputError("Proposal output must not overwrite its own input file.")
+        except OSError:
+            continue
+
+
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="US grant discovery, evidence collection, and reviewed qualification. No automatic submissions.")
+    parser = argparse.ArgumentParser(description="US grant discovery, evidence, reviewed qualification, and proposal drafting tools. No automatic submissions.")
     parser.add_argument("--version", action="version", version=__version__)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("doctor", help="Offline package and registry readiness; no network calls")
@@ -78,6 +121,15 @@ def main(argv=None):
     child.add_argument("--facts", required=True)
     child.add_argument("--as-of", help="ISO date/time for reproducible review, otherwise now")
     child.add_argument("--output", required=True, help="Private assessment output; keep outside public evidence")
+    child = sub.add_parser("proposal", help="Offline proposal workbench: scaffold, check, render. Never submits.")
+    child.add_argument("action", choices=["init", "scaffold", "check", "render"])
+    child.add_argument("--proposal", help="Proposal JSON for check/render")
+    child.add_argument("--facts", help="Separate private facts JSON for check/render")
+    child.add_argument("--proposal-out", help="Scaffold proposal output for init/scaffold")
+    child.add_argument("--facts-out", help="Scaffold facts output for init/scaffold")
+    child.add_argument("--opportunity-id", default="synthetic-opportunity")
+    child.add_argument("--output", help="Private check or draft output; keep outside public evidence")
+    child.add_argument("--overwrite", action="store_true", help="Allow scaffold to replace existing files")
     for command in ("ingest", "export", "report", "check", "replay"):
         child = sub.add_parser(command)
         child.add_argument("--db", required=True)
@@ -136,6 +188,31 @@ def main(argv=None):
             review = read_json(args.review)
             facts = read_json(args.facts)
             write(evaluate_review(review, facts, as_of=args.as_of), args.output)
+        elif args.command == "proposal":
+            from .proposals import check_proposal, new_scaffold, render_package
+            if args.action in ("init", "scaffold"):
+                if not args.proposal_out or not args.facts_out:
+                    raise InputError("Proposal scaffold requires --proposal-out and --facts-out.")
+                refuse_unsafe_output(args.proposal_out, [args.facts_out])
+                refuse_unsafe_output(args.facts_out, [args.proposal_out])
+                for target in (args.proposal_out, args.facts_out):
+                    if Path(target).exists() and not args.overwrite:
+                        raise InputError("Scaffold target exists; pass --overwrite to replace it.")
+                proposal, facts = new_scaffold(args.opportunity_id)
+                write(proposal, args.proposal_out)
+                write(facts, args.facts_out)
+                write({"proposal_out": args.proposal_out, "facts_out": args.facts_out,
+                       "next": "Edit the scaffold, then run proposal check and proposal render."})
+            elif args.action == "check":
+                if not args.proposal or not args.facts:
+                    raise InputError("Proposal check requires --proposal and --facts.")
+                refuse_unsafe_output(args.output, [args.proposal, args.facts])
+                write(check_proposal(read_json(args.proposal), read_json(args.facts)), args.output)
+            else:
+                if not args.proposal or not args.facts or not args.output:
+                    raise InputError("Proposal render requires --proposal, --facts, and --output.")
+                refuse_unsafe_output(args.output, [args.proposal, args.facts])
+                write(render_package(read_json(args.proposal), read_json(args.facts)), args.output)
         else:
             if args.command in ("check", "export", "report") and not Path(args.db).is_file():
                 raise ValueError("Read commands require an existing database")

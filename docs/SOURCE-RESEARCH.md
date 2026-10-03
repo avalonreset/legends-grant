@@ -139,6 +139,77 @@ Useful reusable code includes [HHS Simpler.Grants.gov](https://github.com/HHS/si
 
 Firecrawl and Alexandria remain optional evaluation candidates, not selected dependencies or evidence of additional grant coverage. Compare any retrieval service against direct collection on the same sources, including cost, failed extraction, provenance and permitted use.
 
+## Proposal-writing upstream review
+
+Reviewed October 2, 2026, read-only; no upstream code was installed
+or executed. The synthesis in `docs/PROPOSAL-WRITING.md` is
+independently written. No upstream prose is copied into this project,
+so no upstream license text is reproduced here. Links, reviewed
+commit IDs, and license observations below are the attribution
+record. Our MIT license covers our own code and docs; it does not
+cover upstream CC-BY material. If future work adapts CC-BY text,
+preserve its required attribution, license, and change notices.
+
+| Project | Reviewed revision | License observation |
+|---|---|---|
+| [eseckel/ai-for-grant-writing](https://github.com/eseckel/ai-for-grant-writing) | `0d405fad57f4c82ff2205323c30a3c039cc1b3cf` (HEAD at review) | LICENSE file is CC-BY-4.0. |
+| [AIScientists-Dev/academic-humanizer](https://github.com/AIScientists-Dev/academic-humanizer) | `94b88b23703bed7df507acae7d6d5876209a0cdf` (HEAD at review) | LICENSE file states MIT (Copyright 2026 AIScientists-Dev); GitHub license detection shows NOASSERTION, so the file text is treated as authoritative. |
+
+What each upstream contains:
+
+- ai-for-grant-writing is a curated resource list: a service
+  comparison table, prompt collections, prompt engineering links,
+  quick prompt blocks (clarity, persuasion, structure, mission and
+  review-criteria alignment, titles, risks, timelines), and
+  grant-writing-specific references (PLOS, Nature, NIH, NSF,
+  Stanford, UNC, SSRC, Grants.gov).
+- academic-humanizer is SKILL.md v0.3.3 plus examples: six editing
+  layers (general AI-tell catalog, academic tells, scholarly
+  preserves, claim-evidence discipline, voice matching, NSF/NIH
+  proposal mode), an audit-then-rewrite loop, and before/after
+  examples for papers, an NIH Specific Aims page, and an NSF CAREER
+  summary. It acknowledges blader/humanizer and koaeraser/ARMS as
+  influences; those were not directly reviewed.
+
+Adopted into our workflow (rewritten, not copied):
+
+- Notice-first drafting: prompts that align text to the specific
+  announcement and review criteria became stages 1, 5, and 7.
+- Mock review as a separate pass became stage 7, with verdicts and
+  no numeric scores.
+- Timeline and milestone drafting became stage 4.
+- AI-tell removal and claim-evidence discipline became stage 8 and
+  the evidence rules, generalized beyond academic prose.
+- Proposal weak moves (vague importance, method-as-aim, dominoed
+  aims, boilerplate impacts plans) inform stages 3 and 6.
+
+Deferred or corrected:
+
+- Service recommendations: no provider endorsement, no paid calls.
+- Verbatim prompt blocks: rewritten as process stages instead.
+- Default academic register: community, small business, and
+  workforce proposals keep a plain applicant voice; the academic
+  register applies only to the research appendix.
+- NIH scoring: the upstream line that Significance, Innovation, and
+  Approach are separately scored sections is stale for most
+  research project grants with due dates on or after January 25,
+  2025. Our appendix uses the official simplified framework
+  (Factor 1 and Factor 2 scored, Factor 3 sufficiency, all
+  informing Overall Impact).
+- Example technique that adds numbers, preliminary evidence, or
+  partner names absent from the source passage: forbidden here.
+  Unsupported specifics are OPEN gaps, never improvements.
+
+Primary grant-writing guidance selected for general applicants,
+verified reachable at review:
+
+- [Grants.gov grants 101](https://www.grants.gov/learn-grants/grants-101)
+- [UNC grant proposals guide](https://writingcenter.unc.edu/tips-and-tools/grant-proposals-or-give-me-the-money/)
+- [PLOS ten simple rules for LLMs and grants](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011863)
+- [NIH write your application](https://grants.nih.gov/grants-process/write-application) (research only)
+- [NIH simplified review framework](https://www.grants.nih.gov/policy-and-compliance/policy-topics/peer-review/simplifying-review/framework) (research only)
+- [NSF PAPPG](https://www.nsf.gov/policies/pappg) (research only; the 2004 proposal guide linked upstream is structure background, not current rules)
+
 ## Concrete next tests
 
 1. **Source-method matrix:** test official feed, HTML table, PDF notice, dynamic page, migrated portal and invited-only funder fixtures across regions. Track entry-point verification separately from connector readiness and current-call verification.
@@ -149,3 +220,26 @@ Firecrawl and Alexandria remain optional evaluation candidates, not selected dep
 6. **Economics:** record collection/OCR/model costs, fixed subscriptions, maintenance and reviewer minutes per actionable opportunity. Buy a feed only when its incremental coverage or saved work justifies cost and permitted uses fit the product.
 
 Publish known gaps by source family, geography and applicant type. “No result in these checked sources” is a supportable finding. “No funding exists” and “nationwide coverage complete” are not supported by this research.
+
+## Additional open-source funding lead (2026-10-03)
+
+Reviewed [ralphtheninja/open-funding](https://github.com/ralphtheninja/open-funding/tree/ba41e620deb3f2b4f661a9ae6f3050f3b97097c8)
+at revision `ba41e620deb3f2b4f661a9ae6f3050f3b97097c8` through an independent
+read-only source review. This is a curated Markdown guide to funding open-source
+projects, not an opportunity API or executable discovery engine.
+
+Useful follow-up seeds include CZI Essential Open Source Software, Open
+Technology Fund, Python Software Foundation and ARDC. Its fiscal-hosting links
+also suggest an applicant-affiliation research route. None of these leads was
+qualified or integrated by this review; each needs current official program
+terms, geography, instrument, eligibility and deadline verification.
+
+The guide mixes grants, fellowships, noncash support, crowdfunding, non-US
+programs and archived entries. Missing or old deadlines do not establish current
+availability, and placement in its archive does not establish that a funder has
+ceased operating. Do not bulk-import the list as open grant opportunities.
+
+Its README declares CC BY-SA 4.0 even though there is no separate LICENSE file.
+We link to the guide and record our own evaluation; no text, dataset or code is
+copied into this MIT-licensed product. This is a future source-research lead,
+not a new v0.3.0 feed or dependency.

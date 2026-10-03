@@ -2,6 +2,19 @@
 
 All notable changes to `legends-grant` will be documented here.
 
+## 0.3.0 - 2026-10-03
+
+- Add a proposal-writing workflow from funder questions and supplied facts through
+  narrative drafting, rubric review, revision, budget and attachment preparation.
+- Add offline proposal scaffold, check and Markdown render commands, with separate
+  applicant facts, explicit evidence references and mechanical constraint checks.
+- Preserve historical facts, estimates and commitments as distinct evidence types;
+  substantive claim support and writing quality remain agent or human review.
+- Add synthetic nonacademic examples, adversarial tests and an independent
+  draft-review-revision exercise. These do not measure award success.
+- Credit the grant-writing and academic-editing projects consulted for methods;
+  no upstream prompt pack or hosted writing service is bundled.
+
 ## 0.2.1 - 2026-10-02
 
 - Add prominent README credits for upstream feed operators, design references,

@@ -1,6 +1,6 @@
 # Public evidence runtime
 
-Version 0.2.0. Requires Python 3.11 or newer. The core has no third-party runtime
+Version 0.3.0. Requires Python 3.11 or newer. The core has no third-party runtime
 dependencies, provider keys or paid API calls. The optional `pdf` extra installs
 pypdf for PDF text extraction. After `python -m pip install .`, commands work
 outside the repository. Use `doctor` for offline package readiness. Outputs
@@ -141,6 +141,75 @@ ineligible or eligible-for-review against those supplied rules. The runtime chec
 hashes, quoted passages and supported predicates; it cannot detect an undeclared
 omitted clause or determine whether a quotation entails the proposed rule.
 Application checklists are preparation aids, not automated form completion.
+
+## 7. Draft proposals offline
+
+```powershell
+python -m grant_engine proposal scaffold --proposal-out case-proposal.json --facts-out case-facts.json --opportunity-id maple-bikes-2027
+python -m grant_engine proposal check --proposal case-proposal.json --facts case-facts.json --output case-check.json
+python -m grant_engine proposal render --proposal case-proposal.json --facts case-facts.json --output case-draft.md
+```
+
+`scaffold` (alias `init`) writes a starter proposal file and a
+separate facts file with honest TODO markers. It writes structure,
+never narrative. The agent writes the actual draft text into the
+proposal file following [the proposal writing workflow](PROPOSAL-WRITING.md):
+funder questions and limits, project title and summary, budget lines,
+answers with `fact_refs`, attachment states, shared evidence
+requests, and the `substantive_review` record. Scaffold refuses to
+overwrite existing files unless `--overwrite` is passed, and
+proposal outputs must never overwrite their inputs or target a
+public evidence database file. That guard compares file identity
+so hardlink aliases are caught, and checks the resolved suffix
+plus SQLite magic bytes so renamed database targets are caught.
+
+The facts file holds applicant evidence with stable IDs. Each fact
+declares a `kind` (`historical`, `estimate`, or `commitment`) and a
+`visibility` (`private` or `shareable`), plus an optional source.
+Estimates and future commitments stay labeled as such; the tool
+never rewrites them as historical fact.
+
+`check` validates both schemas, then returns mechanical blockers:
+missing answers, per-question and total word limits, answers without
+citations, unknown fact references, budget mismatches (grant lines
+must sum to the total requested; money is decimal strings, JSON
+numbers are rejected), unallowable categories, unresolved
+placeholders (`{{ }}`, `[[ ]]`, `???`, TODO/TBD/TBC/XXX), missing
+required attachments, and private facts listed as shared evidence.
+Eligibility, award, and submission mentions are not blockers; they
+produce advisory `warnings` codes
+(`claim_to_review:<where>:eligibility_mention|award_mention|submission_mention`)
+for manual review, because the engine cannot tell truthful history
+from an unsupported guarantee. Warnings never affect
+`mechanical_checks_passed`. Word count is defined once: whitespace
+tokens containing at least one alphanumeric character. The check
+result omits answer and fact statement text, but it includes budget
+money totals and review metadata such as reviewer, timestamps, and
+notes, so it must remain private; it is not a sanitized public
+output. A valid check exits 0 even when blockers remain, so always
+inspect `mechanical_checks_passed` and `blockers` rather than the
+exit code. `mechanical_checks_passed` means only that these deterministic
+constraints hold; it never means ready or verified. Coarse
+per-answer citations confirm only that references resolve, not that
+the text actually supports the claim; entailment and rubric quality
+remain substantive agent or human review, recorded in
+`substantive_review` and echoed unchanged.
+
+`render` writes the private Markdown draft package: check status,
+project summary, draft answers with cited fact kinds, budget table,
+attachment states, rubric, shared evidence candidates with private
+facts withheld, a cited-facts appendix grouped by kind, blockers,
+advisory manual review flags, and limitations. There is no submit path. Keep the proposal file,
+the facts file, the check result, and the rendered draft in private
+case storage, outside the public evidence store. The example
+[proposal](../examples/proposal.json) with its
+[facts](../examples/proposal-facts.json),
+[check result](../examples/proposal-check.json), and
+[rendered draft](../examples/proposal-draft.md) is the executable
+format reference; all four files are fictional test data. The
+shipped example is deliberately incomplete: its arithmetic passes
+but two missing required attachments keep it mechanically blocked,
+showing what an honest unfinished check looks like.
 
 ## Verification and limits
 

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "opportunity_id": "synthetic-kitchen-2027",
+  "mechanical_checks_passed": false,
+  "blockers": [
+    "missing_attachment:501c3-letter",
+    "missing_attachment:equipment-quote"
+  ],
+  "warnings": [],
+  "total_words": 133,
+  "answers": [
+    {
+      "question_id": "need",
+      "words": 49,
+      "max_words": 250,
+      "fact_refs": [
+        "org-founded",
+        "meals-2025",
+        "kitchen-size",
+        "year1-projection",
+        "seat-expansion"
+      ],
+      "fact_kinds": {
+        "historical": 3,
+        "estimate": 2
+      },
+      "cited_unknown": []
+    },
+    {
+      "question_id": "plan",
+      "words": 37,
+      "max_words": 300,
+      "fact_refs": [
+        "seat-expansion",
+        "match-pledge",
+        "report-commitment"
+      ],
+      "fact_kinds": {
+        "estimate": 1,
+        "commitment": 2
+      },
+      "cited_unknown": []
+    },
+    {
+      "question_id": "budget-narrative",
+      "words": 47,
+      "max_words": 200,
+      "fact_refs": [
+        "budget-premise",
+        "match-pledge",
+        "report-commitment"
+      ],
+      "fact_kinds": {
+        "estimate": 1,
+        "commitment": 2
+      },
+      "cited_unknown": []
+    }
+  ],
+  "budget": {
+    "currency": "USD",
+    "total_requested": "15000.00",
+    "total_project": "18000.00",
+    "grant_lines_sum": "15000.00",
+    "all_lines_sum": "18000.00",
+    "line_count": 4
+  },
+  "attachments": [
+    {
+      "id": "501c3-letter",
+      "required": true,
+      "state": "missing"
+    },
+    {
+      "id": "equipment-quote",
+      "required": true,
+      "state": "missing"
+    }
+  ],
+  "shared_evidence": {
+    "requested": [
+      "org-founded",
+      "kitchen-size",
+      "seat-expansion",
+      "report-commitment",
+      "budget-premise"
+    ],
+    "withheld_private": [],
+    "unknown": []
+  },
+  "substantive_review": {
+    "status": "in_review",
+    "reviewer": "A. Reviewer (synthetic)",
+    "reviewed_at": null,
+    "notes": "First substantive pass in progress; entailment and rubric scoring are not finished."
+  },
+  "limitation": "Mechanical format and arithmetic checks only. Factual entailment, citation support, and rubric quality require substantive agent or human review. This tool never submits, and its output makes no award or eligibility claim. Keep this case output private."
+}

@@ -5,7 +5,7 @@ Scope includes businesses, nonprofits, governments, tribes, researchers and
 individuals, across federal, state, local and private funding. Source selection
 follows the applicant and project, with no mandatory federal-first search.
 
-## What v0.2.1 does
+## What v0.3.0 does
 
 - A researched nationwide source registry, including all 50 states, DC and five
   territories. Registry coverage is not exhaustive opportunity coverage.
@@ -22,6 +22,16 @@ follows the applicant and project, with no mandatory federal-first search.
 - Evidence-linked review of agent-prepared requirements against separate
   applicant facts, with conservative unresolved results and an application checklist.
 - Comparison of evidence exports to flag changes for re-review.
+
+## Proposal workbench
+
+- Offline `proposal` commands scaffold a draft package, check
+  deterministic constraints (word limits, budget arithmetic, citation
+  references, placeholder screens), flag claim mentions for advisory
+  manual review, and render a private review draft. The agent writes
+  the actual narrative text; the checker never scores quality or
+  predicts awards. See
+  [the proposal writing workflow](docs/PROPOSAL-WRITING.md).
 
 The agent chooses sources, reads governing terms and prepares the review.
 The runtime does not autonomously discover every grant, extract every eligibility
@@ -66,6 +76,7 @@ profiles or credentials. See [runtime guide](docs/RUNTIME.md).
 - [Verification receipt](docs/VERIFICATION.md)
 - [Independent battle test](docs/BATTLE-TEST-2026-10-02.md)
 - [Search](find.md), [match](match.md), [qualify](qualify.md), [apply](apply.md)
+- [Proposal writing workflow](docs/PROPOSAL-WRITING.md) for drafting actual narrative with cited facts and visible gaps
 
 Applicant context can come from `legends-empire` or another authorized source.
 Keep each client's private facts separate from shared public grant evidence.
@@ -84,6 +95,8 @@ projects consulted during design:
 | [cyanheads Grants.gov MCP](https://github.com/cyanheads/grantsgov-mcp-server) and [GSA-TTS Grants.gov MCP](https://github.com/GSA-TTS/mcp-server-grants-gov) | References for federal API fields, filtering, validation and pagination. Their server implementations are not incorporated. |
 | [Grants.gov](https://www.grants.gov/) | Original federal opportunity data, retrieved directly through its public API. |
 | [pypdf](https://github.com/py-pdf/pypdf) | Optional installed dependency that performs PDF text extraction. |
+| [eseckel/ai-for-grant-writing](https://github.com/eseckel/ai-for-grant-writing) (CC-BY-4.0) | Curated grant-writing resources whose methods we distilled into our proposal workflow; no upstream text copied. |
+| [AIScientists-Dev/academic-humanizer](https://github.com/AIScientists-Dev/academic-humanizer) (LICENSE states MIT) | Editing and claim-evidence ideas adapted into selective, plain-voice revision guidance; no upstream text copied. |
 
 No implementation code from the grant-discovery projects above is vendored in
 this release. Feed consumption, design references and the optional PDF dependency

@@ -7,16 +7,22 @@ Build the package and submit where allowed.
 1. Review the current qualification and unresolved requirements. Drafts may be
    prepared while facts are missing, but label their gaps and never treat a
    likely fit as funder approval or a submission-ready package.
-2. Confirm submission authorization: which opportunity, which channel,
-   whose credentials, what gets sent. No authorization, no send.
-3. Draft: narrative answers, budget table, use-of-funds statement,
-   attachments list. Keep funder wording; plain punctuation, no em dashes.
+2. Identify the submission channel and required account or signature. Continue
+   preparing the reviewable package under existing drafting authorization.
+3. Draft: follow [the proposal writing workflow](docs/PROPOSAL-WRITING.md)
+   to write actual narrative sections, budget table, use-of-funds
+   statement, and attachments list. Keep funder wording; plain
+   punctuation, no em dashes. Every claim traces to applicant evidence
+   or the notice; unresolved facts stay visible as OPEN notes.
 4. Assemble: forms, uploads, page and file limits, naming rules, signatures.
 5. Review pass: every claim traces to the business profile or a named doc.
    Flag anything the applicant must verify (revenue, headcount, tax status).
 
 ## Submit
 
+- Use existing explicit submission authorization where it covers this opportunity,
+  channel, account and final package. If it is missing, request it after preparing
+  the package for review. Drafting alone does not authorize sending.
 - Allowed agent channels (once authorized): API post, portal upload,
   email send. State what was sent, where, when, plus receipt.
 - Human channels: mailed package, wet signature, in-person delivery,

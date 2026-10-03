@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "legends-grant-evidence"
 dynamic = ["version"]
-description = "US grant discovery, public evidence, and reviewed qualification"
+description = "US grant discovery, evidence, qualification, and proposal workbench"
 requires-python = ">=3.11"
 dependencies = []
 readme = "README.md"

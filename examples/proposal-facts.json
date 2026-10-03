@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "facts": {
+    "org-founded": {
+      "statement": "SYNTHETIC: Harborview Community Kitchen began serving meals in 2019.",
+      "kind": "historical",
+      "visibility": "shareable",
+      "source": "Synthetic articles of incorporation"
+    },
+    "meals-2025": {
+      "statement": "SYNTHETIC: the kitchen served about 12400 meals in 2025.",
+      "kind": "historical",
+      "visibility": "private",
+      "source": "Synthetic nightly sign-in log"
+    },
+    "kitchen-size": {
+      "statement": "SYNTHETIC: the kitchen operates from a 900 square foot rented hall.",
+      "kind": "historical",
+      "visibility": "shareable",
+      "source": "Synthetic lease summary"
+    },
+    "year1-projection": {
+      "statement": "SYNTHETIC: the plan projects serving 15000 meals in the first grant year.",
+      "kind": "estimate",
+      "visibility": "private",
+      "source": "Synthetic planning sheet"
+    },
+    "seat-expansion": {
+      "statement": "SYNTHETIC: new ovens are projected to add 40 meal seats per service.",
+      "kind": "estimate",
+      "visibility": "shareable",
+      "source": "Synthetic vendor capacity note"
+    },
+    "match-pledge": {
+      "statement": "SYNTHETIC: the board commits 400 volunteer hours as match in the grant year.",
+      "kind": "commitment",
+      "visibility": "private",
+      "source": "Synthetic board minutes"
+    },
+    "report-commitment": {
+      "statement": "SYNTHETIC: the kitchen commits to quarterly spending reports to the funder.",
+      "kind": "commitment",
+      "visibility": "shareable",
+      "source": "Synthetic board minutes"
+    },
+    "budget-premise": {
+      "statement": "SYNTHETIC planned-budget premise: grant request 15000.00 USD covers two convection ovens 12000.00, installation 2500.00, and training 500.00; board match 3000.00; total project 18000.00.",
+      "kind": "estimate",
+      "visibility": "shareable",
+      "source": "Synthetic planned budget input"
+    }
+  }
+}
