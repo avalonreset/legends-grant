@@ -78,7 +78,7 @@ profiles or credentials. See [runtime guide](docs/RUNTIME.md).
 - [Search](find.md), [match](match.md), [qualify](qualify.md), [apply](apply.md)
 - [Proposal writing workflow](docs/PROPOSAL-WRITING.md) for drafting actual narrative with cited facts and visible gaps
 
-Applicant context can come from `legends-empire` or another authorized source.
+Applicant context can come from [`legends-empire`](https://github.com/avalonreset/legends-empire) or another authorized source.
 Keep each client's private facts separate from shared public grant evidence.
 
 ## Credits and upstream projects
