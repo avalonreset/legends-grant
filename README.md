@@ -1,9 +1,10 @@
-# legends-grant
+# ![legends-grant](assets/banner.webp)
 
-An agent-assisted US grant discovery, evidence and application workflow.
-Scope includes businesses, nonprofits, governments, tribes, researchers and
-individuals, across federal, state, local and private funding. Source selection
-follows the applicant and project, with no mandatory federal-first search.
+[![release](https://img.shields.io/github/v/release/avalonreset/legends-grant?label=release&sort=date&style=flat-square&labelColor=000000&color=ff0000)](https://github.com/avalonreset/legends-grant/releases/latest)
+[![checks](https://img.shields.io/github/actions/workflow/status/avalonreset/legends-grant/ci.yml?branch=main&label=checks&style=flat-square&labelColor=000000)](https://github.com/avalonreset/legends-grant/actions/workflows/ci.yml)
+[![license](https://img.shields.io/github/license/avalonreset/legends-grant?label=license&style=flat-square&labelColor=000000&color=666666)](LICENSE)
+
+**US grant discovery CLI (`grant_engine`), SQLite evidence store, and proposal verification workbench for AI agents across federal (`Grants.gov`), state (`CommonGrants`), local, tribal, and foundation funding.**
 
 ## What v0.3.0 does
 
@@ -39,7 +40,7 @@ rule, guarantee qualification, or submit applications. State feeds require offic
 notice verification. A successful document download does not prove the notice
 inventory is complete. No paid provider or Alexandria dependency is required.
 
-## Try it
+## Quick start
 
 Python 3.11 or newer; core runtime uses only the standard library. From this directory:
 
@@ -109,6 +110,27 @@ The [source research and adoption decisions](docs/SOURCE-RESEARCH.md#github-reus
 record reviewed revisions, licensing observations and projects considered for
 future work, including Grantmakers and Nonprofit Open Data Collective.
 
+## Architecture and project layout
+
+```text
+Applicant & Jurisdiction Plan (`grant_engine plan`)
+  -> Public adapters (`grants-gov`, `common-grants`, HTTPS notice fetch)
+  -> Immutable SQLite evidence store (`ingest`, `search`, `report`, `check`)
+  -> Eligibility review & deterministic proposal workbench (`proposal`)
+```
+
+- `grant_engine/`: Standard-library Python 3.11+ runtime for planning, discovery, SQLite evidence management, and proposal verification.
+- `docs/`: [Grant recipe](docs/GRANT-RECIPE.md), [nationwide design](docs/NATIONWIDE-DESIGN.md), [proposal writing workflow](docs/PROPOSAL-WRITING.md), and [search strategy](docs/SEARCH-STRATEGY.md).
+- `skills/cto-legends/SKILL.md`: Pinned copy of the central [`cto-legends`](https://github.com/avalonreset/cto-legends) router skill.
+
+## FAQ
+
+**Does `legends-grant` require paid API keys to search Grants.gov or CommonGrants?**
+No. Both the federal `Grants.gov` adapter and the four vetted `CommonGrants` state feeds (`CA`, `PA`, `WA`, `MD`) use public endpoints and require zero paid API keys.
+
+**Does the proposal checker score writing quality or predict grant awards?**
+No. The `proposal` workbench checks deterministic rules (word limits, budget arithmetic, citation links, and placeholder tokens) and flags claims for manual review while your agent drafts the actual narrative.
+
 ## Agent setup (via `cto-legends`)
 
 Part of the [CTO Legends](https://github.com/avalonreset/cto-legends) ecosystem. `cto-legends` is the only registered skill; this repo vendors a pinned copy at `skills/cto-legends/SKILL.md`.
@@ -120,4 +142,6 @@ Preview and apply installation through the router. Existing users first run
 `cto-legends update legends-grant`. Keep evidence and private client work outside
 the replaceable installation directory.
 
-MIT. See [LICENSE](LICENSE).
+## License and contributing
+
+MIT licensed. See [LICENSE](LICENSE), [CONTRIBUTING.md](CONTRIBUTING.md), [SUPPORT.md](SUPPORT.md), and [SECURITY.md](SECURITY.md).

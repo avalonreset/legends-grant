@@ -1,0 +1,36 @@
+{
+  "template": "legends-type-v1",
+  "title": "legends-grant",
+  "subtitle_lines": [
+    "us grant discovery, eligibility research,",
+    "and evidence-linked proposal writing cli"
+  ],
+  "size": [
+    4096,
+    1024
+  ],
+  "text_bounds": [
+    [
+      192,
+      212,
+      1609,
+      383
+    ],
+    [
+      192,
+      534,
+      2816,
+      636
+    ],
+    [
+      192,
+      666,
+      2752,
+      768
+    ]
+  ],
+  "font_sha256": "3769f0f76477a7d9e2e6cb40422dedacb56c9ab1a6f7beee89b2b9ba6b8091ee",
+  "banner_sha256": "8866086a5d27432909b4e0960496f9245870bfe22b24d0250bafceea43f35b08",
+  "output_dir": "C:\\Users\\rccol\\AppData\\Local\\Temp\\legends-banner-renders\\legends-grant",
+  "published": false
+}
