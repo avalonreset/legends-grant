@@ -145,3 +145,10 @@ the replaceable installation directory.
 ## License and contributing
 
 MIT licensed. See [LICENSE](LICENSE), [CONTRIBUTING.md](CONTRIBUTING.md), [SUPPORT.md](SUPPORT.md), and [SECURITY.md](SECURITY.md).
+
+---
+
+**Specification & benchmarks on cto-legends.com:**
+- **Module specification & architecture matrix:** [cto-legends.com/modules/legends-grant](https://cto-legends.com/modules/legends-grant)
+- **Related engineering dispatches:** [Obsidian Second Brain: Markdown Knowledge Base Guide](https://cto-legends.com/blog?post=obsidian-second-brain-markdown-knowledge-base) · [How to Build AI Agents: Production CLI & MCP Routing](https://cto-legends.com/blog?post=how-to-build-ai-agents-cli-mcp-routing) · [Claude Code Skills: MCP vs CLI Workflow Architecture](https://cto-legends.com/blog?post=claude-code-skills-mcp-vs-cli-workflow)
+- **Ecosystem hub:** [cto-legends.com/home](https://cto-legends.com/home)
