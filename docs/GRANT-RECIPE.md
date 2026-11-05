@@ -52,3 +52,11 @@ web/browser tools, follow official documents, and report blocked access. Do not
 bypass access controls or assume a vendor API permits bulk storage.
 
 Use plain punctuation; no em dashes in generated public copy.
+
+## EDR and Security Guardrails
+
+- Zero browser state or local desktop credential store reads (`Local State`, `Login Data`, `Cookies`, `IndexedDB`, `LevelDB`, DPAPI, Keychain).
+- Zero executable shell wrappers (`.ps1`, `.sh`, `.bat`, `.cmd`, `.vbs`, `.wsf`, `.hta`, `.scr`) shipped inside the repository.
+- Outbound network traffic is restricted to explicit user-invoked public HTTPS grant endpoints (`api.grants.gov`, vetted `*.api.cg.a6lab.ai` CommonGrants state feeds, and explicit HTTPS URLs passed to `collect-document`) with HTTP redirects disabled (`NoRedirect`).
+- PDF text extraction runs in a bounded subprocess via `python -m grant_engine.documents` with a 15-second timeout, 200-page limit, and 2-million-character cap, with zero inline `python -c` execution or hidden-window flags.
+- All PNG and WebP assets are stripped of ancillary metadata chunks (`tEXt`, `iTXt`, `zTXt`, `eXIf`, `EXIF`, `XMP`) before commit.

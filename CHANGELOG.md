@@ -2,6 +2,12 @@
 
 All notable changes to `legends-grant` will be documented here.
 
+## 0.3.2 - 2026-11-05
+
+- Added `AGENTS.md`, `docs/AGENT-RECIPE.md`, `THIRD_PARTY_NOTICES.md`, `assets/manifest.json`, and `scripts/check_release.py` Gold Standard static release gate.
+- Documented explicit EDR and Security Guardrails across `AGENTS.md`, `docs/AGENT-RECIPE.md`, and `docs/GRANT-RECIPE.md`, and removed legacy `bin/lg-selftest.sh` wrapper.
+- Expanded `.github/workflows/runtime.yml` and `.github/workflows/contract.yml` to run across Ubuntu, Windows, and macOS with 40-character SHA action pins and explicit `contents: read` permissions.
+
 ## 0.3.1 - 2026-11-04
 
 - Replace inline `python -c` and hidden-window subprocess flags in `grant_engine/documents.py` PDF extraction with a standard module entry point (`python -m grant_engine.documents`) and captured `stderr=PIPE` while preserving the 15-second timeout and 200-page / 2-million-character parser bounds.
