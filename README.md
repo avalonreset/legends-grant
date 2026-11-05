@@ -6,7 +6,7 @@
 
 **US grant discovery CLI (`grant_engine`), SQLite evidence store, and proposal verification workbench for AI agents across federal (`Grants.gov`), state (`CommonGrants`), local, tribal, and foundation funding.**
 
-## What v0.3.0 does
+## What v0.3.1 does
 
 - A researched nationwide source registry, including all 50 states, DC and five
   territories. Registry coverage is not exhaustive opportunity coverage.

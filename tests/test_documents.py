@@ -80,10 +80,12 @@ class DocumentsTests(unittest.TestCase):
     def test_pdf_worker_limits_are_not_success(self):
         for status in ("blocked_pdf_page_limit", "blocked_pdf_text_limit", "blocked_scan_requires_ocr", "blocked_encrypted_pdf"):
             process = subprocess.CompletedProcess([], 0, json.dumps({"text": "", "status": status}).encode())
-            with patch.dict("sys.modules", {"pypdf": object()}), patch("grant_engine.documents.subprocess.run", return_value=process):
+            with patch.dict("sys.modules", {"pypdf": object()}), patch("grant_engine.documents.subprocess.run", return_value=process) as run_mock:
                 result = self.collect(b"%PDF-1.7\nfixture", "application/pdf")
             self.assertFalse(result["ok"])
             self.assertEqual(result["document"]["extraction_status"], status)
+            self.assertEqual(run_mock.call_args.args[0][1:], ["-m", "grant_engine.documents"])
+            self.assertNotIn("creationflags", run_mock.call_args.kwargs)
 
     def test_base_href_and_table_cells(self):
         result = self.collect(b'<head><base href="/grant-files/"></head><table><tr><td>Match</td><td>20%</td></tr></table><a href="terms.pdf">terms</a>', "text/html")

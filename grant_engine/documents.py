@@ -242,10 +242,10 @@ def _extract(body, content_type, final_url):
         except ImportError:
             return "", [], "blocked_pdf_dependency", "pdf", []
         try:
-            result = subprocess.run([sys.executable, "-c", "from grant_engine.documents import _pdf_worker; _pdf_worker()"],
-                input=body, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=15,
+            result = subprocess.run([sys.executable, "-m", "grant_engine.documents"],
+                input=body, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15,
                 cwd=str(Path(__file__).resolve().parent.parent),
-                creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0), check=True)
+                check=True)
             value = json.loads(result.stdout)
             links = _text_links(value["text"])
             return value["text"], links, value["status"], "pdf", [{"url": url, "label": "", "element": "visible_text"} for url in links]
@@ -407,3 +407,7 @@ def verify_bundle(bundle_dir):
     if not count:
         errors.append({"code": "no_receipts"})
     return {"ok": not errors, "receipts": count, "artifacts": len(artifacts), "errors": errors}
+
+
+if __name__ == "__main__":
+    _pdf_worker()

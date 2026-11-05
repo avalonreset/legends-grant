@@ -1,6 +1,6 @@
 # Public evidence runtime
 
-Version 0.3.0. Requires Python 3.11 or newer. The core has no third-party runtime
+Version 0.3.1. Requires Python 3.11 or newer. The core has no third-party runtime
 dependencies, provider keys or paid API calls. The optional `pdf` extra installs
 pypdf for PDF text extraction. After `python -m pip install .`, commands work
 outside the repository. Use `doctor` for offline package readiness. Outputs

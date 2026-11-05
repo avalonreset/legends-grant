@@ -2,6 +2,10 @@
 
 All notable changes to `legends-grant` will be documented here.
 
+## 0.3.1 - 2026-11-04
+
+- Replace inline `python -c` and hidden-window subprocess flags in `grant_engine/documents.py` PDF extraction with a standard module entry point (`python -m grant_engine.documents`) and captured `stderr=PIPE` while preserving the 15-second timeout and 200-page / 2-million-character parser bounds.
+
 ## 0.3.0 - 2026-10-03
 
 - Add a proposal-writing workflow from funder questions and supplied facts through
