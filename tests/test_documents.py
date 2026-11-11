@@ -249,6 +249,38 @@ class DocumentsTests(unittest.TestCase):
             with self.subTest(options=options), self.assertRaises(ValueError):
                 self.collect(**options)
 
+    def test_nat64_6to4_teredo_and_ipv4_mapped_ssrf_refused(self):
+        blocked_ips = (
+            "64:ff9b::169.254.169.254",
+            "64:ff9b::7f00:1",
+            "64:ff9b:1::10.0.0.1",
+            "2002:a9fe:a9fe::1",
+            "2002:7f00:0001::1",
+            "2001:0000:4136:e378:8000:63bf:3fff:fdd2",
+            "::ffff:127.0.0.1",
+            "::ffff:169.254.169.254",
+            "198.51.100.1",
+        )
+        for ip in blocked_ips:
+            with self.subTest(ip=ip):
+                with self.assertRaises(DocumentError):
+                    public_url(f"https://[{ip}]/notice" if ":" in ip else f"https://{ip}/notice")
+                calls = []
+                family = socket.AF_INET6 if ":" in ip else socket.AF_INET
+                dns = lambda *a, **k: [(family, socket.SOCK_STREAM, 6, "", (ip, 443))]
+                result = collect_document(URL, self.root, resolver=dns, transport=lambda *a: calls.append(a))
+                self.assertFalse(result["ok"])
+                self.assertEqual(calls, [])
+
+    def test_html_link_inventory_capped_at_max_inventoried_links(self):
+        anchors = "".join(f'<a href="https://example.gov/doc/{i}.pdf">Doc {i}</a>' for i in range(2005))
+        body = (f"<h1>Public Grant Notice</h1><p>Applications are open for eligible entities across the state.</p>{anchors}").encode("utf-8")
+        result = self.collect(body, "text/html")
+        self.assertTrue(result["ok"])
+        self.assertEqual(len(result["document"]["links"]), 2000)
+        self.assertEqual(len(result["document"]["link_details"]), 2000)
+        self.assertTrue(result["document"].get("links_truncated"))
+
 
 if __name__ == "__main__":
     unittest.main()

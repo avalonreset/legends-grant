@@ -20,7 +20,42 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import parse_qsl, urljoin, urlsplit, urlunsplit
 
-from .core import SENSITIVE, canonical, now
+from .core import SENSITIVE, canonical, now, refuse_symlink
+
+MAX_INVENTORIED_LINKS = 2000
+
+_BLOCKED_NETWORKS = (
+    ipaddress.ip_network("64:ff9b::/96"),
+    ipaddress.ip_network("64:ff9b:1::/48"),
+    ipaddress.ip_network("2001::/32"),
+    ipaddress.ip_network("2002::/16"),
+    ipaddress.ip_network("192.0.0.0/24"),
+    ipaddress.ip_network("192.0.2.0/24"),
+    ipaddress.ip_network("198.18.0.0/15"),
+    ipaddress.ip_network("198.51.100.0/24"),
+    ipaddress.ip_network("203.0.113.0/24"),
+)
+
+
+def _is_public_address(address):
+    if getattr(address, "ipv4_mapped", None):
+        return _is_public_address(address.ipv4_mapped)
+    if getattr(address, "sixtofour", None):
+        return _is_public_address(address.sixtofour)
+    if getattr(address, "teredo", None):
+        server, client = address.teredo
+        return _is_public_address(server) and _is_public_address(client)
+    if (
+        not address.is_global
+        or address.is_multicast
+        or address.is_private
+        or address.is_loopback
+        or address.is_link_local
+        or address.is_reserved
+        or address.is_unspecified
+    ):
+        return False
+    return not any(address in net for net in _BLOCKED_NETWORKS)
 
 
 class DocumentError(ValueError):
@@ -67,7 +102,7 @@ def public_url(url):
         if not re.fullmatch(r"[a-z0-9.-]+", host) or "." not in host:
             raise DocumentError("invalid_public_hostname") from None
     else:
-        if not address.is_global or address.is_multicast:
+        if not _is_public_address(address):
             raise DocumentError("private_address_refused")
     return urlunsplit((parts.scheme, parts.netloc, parts.path or "/", parts.query, ""))
 
@@ -80,7 +115,7 @@ def _addresses(url, resolver):
         raise DocumentError("dns_empty")
     for item in addresses:
         address = ipaddress.ip_address(item.split("%")[0])
-        if not address.is_global or address.is_multicast:
+        if not _is_public_address(address):
             raise DocumentError("private_dns_answer_refused")
     return addresses
 
@@ -147,6 +182,7 @@ class _HTMLText(HTMLParser):
         self.link_set, self.base_seen = set(), False
         self.link_details, self.active_link = [], None
         self.login_form = False
+        self.links_truncated = False
 
     def handle_starttag(self, tag, attrs):
         if tag in {"script", "style", "noscript", "template"}:
@@ -175,6 +211,10 @@ class _HTMLText(HTMLParser):
                 url = public_url(urljoin(self.base_url, href))
             except DocumentError:
                 return
+            if len(self.link_details) >= MAX_INVENTORIED_LINKS:
+                self.links_truncated = True
+                self.active_link = None
+                return
             if url not in self.link_set:
                 self.links.append(url)
                 self.link_set.add(url)
@@ -200,14 +240,18 @@ class _HTMLText(HTMLParser):
 
 def _text_links(text):
     links = []
+    truncated = False
     for value in re.findall(r'https://[^\s<>"\x00-\x20]+', text):
         try:
             url = public_url(value.rstrip(".,;)]}"))
         except DocumentError:
             continue
         if url not in links:
+            if len(links) >= MAX_INVENTORIED_LINKS:
+                truncated = True
+                break
             links.append(url)
-    return links
+    return links, truncated
 
 
 def _pdf_worker():
@@ -240,26 +284,26 @@ def _extract(body, content_type, final_url):
         try:
             import pypdf  # noqa: F401 - only probe availability in this process
         except ImportError:
-            return "", [], "blocked_pdf_dependency", "pdf", []
+            return "", [], "blocked_pdf_dependency", "pdf", [], False
         try:
             result = subprocess.run([sys.executable, "-m", "grant_engine.documents"],
                 input=body, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15,
                 cwd=str(Path(__file__).resolve().parent.parent),
                 check=True)
             value = json.loads(result.stdout)
-            links = _text_links(value["text"])
-            return value["text"], links, value["status"], "pdf", [{"url": url, "label": "", "element": "visible_text"} for url in links]
+            links, truncated = _text_links(value["text"])
+            return value["text"], links, value["status"], "pdf", [{"url": url, "label": "", "element": "visible_text"} for url in links], truncated
         except subprocess.TimeoutExpired:
-            return "", [], "blocked_pdf_timeout", "pdf", []
+            return "", [], "blocked_pdf_timeout", "pdf", [], False
         except Exception:
-            return "", [], "blocked_pdf_parse", "pdf", []
+            return "", [], "blocked_pdf_parse", "pdf", [], False
     if mime not in {"text/html", "application/xhtml+xml", "text/plain", "text/csv", "application/json", "application/xml", "text/xml"}:
-        return "", [], "blocked_unsupported_format", mime or "unknown", []
+        return "", [], "blocked_unsupported_format", mime or "unknown", [], False
     charset = re.search(r"charset\s*=\s*[\"']?([a-zA-Z0-9._-]+)", content_type, re.I)
     try:
         text = body.decode(charset.group(1) if charset else "utf-8", errors="strict")
     except (UnicodeError, LookupError):
-        return "", [], "blocked_text_encoding", mime, []
+        return "", [], "blocked_text_encoding", mime, [], False
     if mime in {"text/html", "application/xhtml+xml"}:
         parser = _HTMLText(final_url)
         parser.feed(text)
@@ -271,15 +315,21 @@ def _extract(body, content_type, final_url):
             status = "blocked_insufficient_html_text"
         elif len(text) < 500 and any(marker in text.lower() for marker in ("enable javascript", "javascript is required", "access denied", "verify you are human", "checking your browser")):
             status = "blocked_interactive_html"
-        return text, parser.links, status, "html", parser.link_details
-    links = _text_links(text)
-    return text, links, "extracted" if text.strip() else "blocked_empty_text", "text", [{"url": url, "label": "", "element": "visible_text"} for url in links]
+        return text, parser.links, status, "html", parser.link_details, parser.links_truncated
+    links, truncated = _text_links(text)
+    return text, links, "extracted" if text.strip() else "blocked_empty_text", "text", [{"url": url, "label": "", "element": "visible_text"} for url in links], truncated
 
 
 def _artifact(root, body, folder, suffix):
-    root = root.resolve()
+    raw_root = Path(root)
+    refuse_symlink(raw_root, DocumentError, "bundle_symlink_refused")
+    refuse_symlink(raw_root / folder, DocumentError, "artifact_symlink_refused")
+    root = raw_root.resolve()
     checksum = hashlib.sha256(body).hexdigest()
     relative = f"{folder}/{checksum}{suffix}"
+    raw_path = raw_root / relative
+    if raw_path.is_symlink():
+        raise DocumentError("artifact_symlink_refused")
     path = root / relative
     if not path.resolve().is_relative_to(root):
         raise DocumentError("artifact_outside_bundle")
@@ -306,6 +356,7 @@ def collect_document(url, bundle_dir, *, transport=None, resolver=socket.getaddr
     if type(max_bytes) is not int or not 1 <= max_bytes <= 50_000_000 or not 0 < timeout <= 120 or type(max_redirects) is not int or not 0 <= max_redirects <= 10:
         raise ValueError("Invalid collection bounds")
     root = Path(bundle_dir)
+    refuse_symlink(root, DocumentError, "bundle_symlink_refused")
     receipt = {"schema_version": 1, "fetched_at": now(), "ok": False, "retrieved": False,
                "document": None, "errors": [], "redirects": [], "notice_complete": False,
                "authority": "unassessed", "eligibility": "unassessed", "content_review_required": True,
@@ -355,11 +406,14 @@ def collect_document(url, bundle_dir, *, transport=None, resolver=socket.getaddr
             receipt["document"] = {"url": current, "content_type": content_type,
                 "raw": raw, "text": None, "extraction_status": "blocked_extraction_error",
                 "links": [], "link_details": [], "links_fetched": False}
-            text, links, status, kind, link_details = _extract(response.body, content_type, current)
+            text, links, status, kind, link_details, links_truncated = _extract(response.body, content_type, current)
             extracted = _artifact(root, text.encode("utf-8"), "artifacts", ".txt") if text else None
-            receipt["document"] = {"url": current, "content_type": content_type, "format": kind,
+            doc_payload = {"url": current, "content_type": content_type, "format": kind,
                 "raw": raw, "text": extracted, "extraction_status": status,
                 "links": links, "link_details": link_details, "links_fetched": False}
+            if links_truncated:
+                doc_payload["links_truncated"] = True
+            receipt["document"] = doc_payload
             receipt["ok"] = status == "extracted"
             if not receipt["ok"]:
                 receipt["errors"].append({"error_type": "ExtractionBlocked", "code": status})
@@ -372,11 +426,20 @@ def collect_document(url, bundle_dir, *, transport=None, resolver=socket.getaddr
 
 def verify_bundle(bundle_dir):
     """Verify receipt names, artifact hashes and path confinement; no network."""
-    root = Path(bundle_dir).resolve()
+    raw_root = Path(bundle_dir)
+    try:
+        refuse_symlink(raw_root, DocumentError, "bundle_symlink_refused")
+        refuse_symlink(raw_root / "receipts", DocumentError, "receipt_symlink_refused")
+        refuse_symlink(raw_root / "artifacts", DocumentError, "artifact_symlink_refused")
+    except DocumentError as exc:
+        return {"ok": False, "receipts": 0, "artifacts": 0, "errors": [{"code": str(exc)}]}
+    root = raw_root.resolve()
     errors, artifacts, count = [], set(), 0
-    for path in sorted((root / "receipts").glob("*.json")):
+    for path in sorted((raw_root / "receipts").glob("*.json")):
         count += 1
         try:
+            if path.is_symlink():
+                raise DocumentError("receipt_symlink_refused")
             if not path.resolve().is_relative_to(root):
                 raise DocumentError("receipt_outside_bundle")
             data = path.read_bytes()
@@ -394,6 +457,9 @@ def verify_bundle(bundle_dir):
                 relative = artifact["path"]
                 if not re.fullmatch(r"artifacts/[a-f0-9]{64}\.(bin|txt)", relative):
                     raise DocumentError("invalid_artifact_path")
+                raw_target = raw_root / relative
+                if raw_target.is_symlink():
+                    raise DocumentError("artifact_symlink_refused")
                 target = (root / relative).resolve()
                 if not target.is_relative_to(root):
                     raise DocumentError("artifact_outside_bundle")

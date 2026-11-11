@@ -16,6 +16,7 @@ EXPECTED_MODULE_ID = "legends-grant"
 
 REQUIRED_FILES = [
     ".legends-module",
+    ".legends-router-pin",
     "VERSION",
     "pyproject.toml",
     "README.md",
@@ -59,14 +60,28 @@ FORBIDDEN_EXTENSIONS = {
     ".wsf",
     ".hta",
     ".scr",
+    ".ahk",
+    ".pem",
+    ".key",
+    ".p12",
+    ".pfx",
 }
 
 FORBIDDEN_TEXT_PATTERNS = [
-    re.compile(r"C:\\Users\\", re.IGNORECASE),
+    re.compile(r"[a-z]:\\users\\", re.IGNORECASE),
     re.compile(r"/Users/[A-Za-z0-9._-]+/"),
+    re.compile(r"\.tail[a-z0-9]+\.ts\.net", re.IGNORECASE),
     re.compile(r"sk_(?:live|test)_[A-Za-z0-9]{16,}"),
     re.compile(r"rk_(?:live|test)_[A-Za-z0-9]{16,}"),
     re.compile(r"whsec_[A-Za-z0-9]{16,}"),
+    re.compile(r"gh[pousr]_[A-Za-z0-9]{20,}"),
+    re.compile(r"-----BEGIN [A-Z0-9 ]*PRIVATE KEY-----"),
+    re.compile(r"\bCREATE_NO_WINDOW\b"),
+    re.compile(r"\b0x08000000\b", re.IGNORECASE),
+    re.compile(r"-WindowStyle\s+Hidden", re.IGNORECASE),
+    re.compile(r"-ExecutionPolicy\s+Bypass", re.IGNORECASE),
+    re.compile(r"\bctypes\.windll\b"),
+    re.compile(r"\bGetAsyncKeyState\b"),
 ]
 
 EDR_FORBIDDEN_SUBSTRINGS = [
@@ -76,9 +91,10 @@ EDR_FORBIDDEN_SUBSTRINGS = [
     "BraveSoftware\\Brave-Browser\\User Data",
     "Login Data",
     "Local State",
+    "IndexedDB",
     "CryptUnprotectData",
     "win32crypt",
-    " Mimikatz",
+    "Mimikatz",
     "Invoke-Expression",
     "FromBase64String",
     "DownloadString(",
@@ -145,7 +161,7 @@ def _check_markdown_links(path: Path, text: str, issues: list[str]) -> None:
             if not rel_path:
                 continue
             resolved = (path.parent / rel_path).resolve()
-            if not resolved.exists():
+            if not resolved.exists() or not resolved.is_relative_to(ROOT.resolve()):
                 issues.append(f"{path.relative_to(ROOT)}:{line_no}: broken relative link -> {raw_target}")
 
 
@@ -210,10 +226,10 @@ def main() -> int:
 
         if path.suffix.lower() in {".py", ".md", ".json", ".toml", ".yml", ".yaml", ".cff", ".txt"}:
             text = path.read_text(encoding="utf-8", errors="replace")
-            for pattern in FORBIDDEN_TEXT_PATTERNS:
-                if pattern.search(text):
-                    issues.append(f"Forbidden text pattern {pattern.pattern} in {rel}")
             if rel != "scripts/check_release.py":
+                for pattern in FORBIDDEN_TEXT_PATTERNS:
+                    if pattern.search(text):
+                        issues.append(f"Forbidden text pattern {pattern.pattern} in {rel}")
                 for edr_sub in EDR_FORBIDDEN_SUBSTRINGS:
                     if edr_sub in text and rel not in {"AGENTS.md", "docs/AGENT-RECIPE.md", "docs/GRANT-RECIPE.md"}:
                         issues.append(f"EDR-sensitive substring '{edr_sub}' in {rel}")

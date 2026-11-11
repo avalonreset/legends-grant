@@ -2,6 +2,13 @@
 
 All notable changes to `legends-grant` will be documented here.
 
+## 0.3.3 - 2026-11-11
+
+- Enforced ancestor-chain symlink refusal (`refuse_symlink`) and explicit `--overwrite` protection (`open(..., "x")`) across all CLI file inputs, outputs, `--db`, `--registry`, and `collect-document` / `verify-documents` bundle directories and artifacts (`CWE-59`, `CWE-73`, EDR Law 2).
+- Hardened `collect-document` SSRF validation (`public_url` and `_addresses` in `grant_engine/documents.py`) against IPv6 NAT64 (`64:ff9b::/96`, `64:ff9b:1::/48`), 6to4 (`2002::/16`), Teredo (`2001::/32`), IPv4-mapped IPv6 addresses, and reserved IANA ranges (`CWE-918`), and capped HTML/text link inventories at `MAX_INVENTORIED_LINKS = 2000`.
+- Sanitized untrusted external fields (`title`, `url`, `program_id`, `cycle_id`, `feed_url`, budget table cells, and funder prompts) against raw HTML tags and Markdown pipe/newline injection in `Store.report()` and `render_package()` (`CWE-79`, `CWE-1236`).
+- Synchronized `docs/AGENT-RECIPE.md`, `AGENTS.md`, `docs/GRANT-RECIPE.md`, `README.md`, `SECURITY.md`, `MANIFEST.in`, `pyproject.toml`, `.github/workflows/runtime.yml` (`pip>=26.2.2`), and `scripts/check_release.py` to Gold Standard parity.
+
 ## 0.3.2 - 2026-11-05
 
 - Added `AGENTS.md`, `docs/AGENT-RECIPE.md`, `THIRD_PARTY_NOTICES.md`, `assets/manifest.json`, and `scripts/check_release.py` Gold Standard static release gate.

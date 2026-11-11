@@ -1,12 +1,12 @@
 # ![legends-grant](assets/banner.webp)
 
 [![release](https://img.shields.io/github/v/release/avalonreset/legends-grant?label=release&sort=date&style=flat-square&labelColor=000000&color=ff0000)](https://github.com/avalonreset/legends-grant/releases/latest)
-[![checks](https://img.shields.io/github/actions/workflow/status/avalonreset/legends-grant/ci.yml?branch=main&label=checks&style=flat-square&labelColor=000000)](https://github.com/avalonreset/legends-grant/actions/workflows/ci.yml)
+[![checks](https://img.shields.io/github/actions/workflow/status/avalonreset/legends-grant/runtime.yml?branch=main&label=checks&style=flat-square&labelColor=000000)](https://github.com/avalonreset/legends-grant/actions/workflows/runtime.yml)
 [![license](https://img.shields.io/github/license/avalonreset/legends-grant?label=license&style=flat-square&labelColor=000000&color=666666)](LICENSE)
 
 **US grant discovery CLI (`grant_engine`), SQLite evidence store, and proposal verification workbench for AI agents across federal (`Grants.gov`), state (`CommonGrants`), local, tribal, and foundation funding.**
 
-## What v0.3.2 does
+## What v0.3.3 does
 
 - A researched nationwide source registry, including all 50 states, DC and five
   territories. Registry coverage is not exhaustive opportunity coverage.

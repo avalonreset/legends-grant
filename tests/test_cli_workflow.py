@@ -142,8 +142,11 @@ class CLIWorkflowTests(unittest.TestCase):
         self.assertEqual(list(self.root.glob("*.db")), [self.db])
         # Unknown facts remain unresolved even if the proposed review says pass.
         facts.write_text('{"entity_type":"nonprofit","state":"PA"}', encoding="utf-8")
+        # Without --overwrite, writing to an existing assessment file is refused.
         self.assertEqual(self.invoke("review", "--review", EXAMPLE, "--facts", facts,
-                                     "--as-of", "2030-10-02T12:00:00Z", "--output", assessment)[0], 0)
+                                     "--as-of", "2030-10-02T12:00:00Z", "--output", assessment)[0], 2)
+        self.assertEqual(self.invoke("review", "--review", EXAMPLE, "--facts", facts,
+                                     "--as-of", "2030-10-02T12:00:00Z", "--output", assessment, "--overwrite")[0], 0)
         result = json.loads(assessment.read_text(encoding="utf-8"))
         self.assertEqual(result["decision"], "unresolved")
         self.assertTrue(result["blockers"])
@@ -186,6 +189,34 @@ class CLIWorkflowTests(unittest.TestCase):
         self.assertEqual((code, error), (2, ""))
         self.assertFalse(json.loads(output)["ok"])
         self.assertFalse(json.loads(output)["retrieved"])
+
+    def test_report_escapes_html_and_refuses_overwriting_db(self):
+        self.seed()
+        code, _, error = self.invoke("report", "--db", self.db, "--output", self.db, "--overwrite")
+        self.assertEqual(code, 2)
+        self.assertIn("evidence database", error)
+        packet = {
+            "schema_version": 1,
+            "records": [{
+                "source_id": "grants-gov",
+                "program_id": "prog<script>",
+                "cycle_id": "cyc\r\n1",
+                "record_type": "opportunity",
+                "title": "Grant <img src=x onerror=alert(1)>\r\n# Injected",
+                "status": "open",
+                "url": "https://www.grants.gov/search-results-detail/1",
+                "retrieved_at": "2026-11-11T00:00:00Z",
+                "evidence": {"search_hit": {"id": "1"}},
+                "metadata": {"eligibility": "unassessed"},
+            }],
+        }
+        pkt_path = self.json_file("xss-packet.json", packet)
+        self.assertEqual(self.invoke("ingest", "--db", self.db, "--input", pkt_path)[0], 0)
+        code, md, error = self.invoke("report", "--db", self.db)
+        self.assertEqual((code, error), (0, ""))
+        self.assertIn("&lt;img src=x onerror=alert(1)&gt;", md)
+        self.assertNotIn("<img src=x", md)
+        self.assertIn("prog&lt;script&gt;", md)
 
 
 if __name__ == "__main__":

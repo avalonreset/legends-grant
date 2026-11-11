@@ -39,9 +39,18 @@ quality remain substantive agent or human review, recorded explicitly in
 ``substantive_review`` and echoed unchanged by this tool.
 """
 
+import html
 import re
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
+
+
+def _md_inline(value):
+    return html.escape(str(value).replace("\r", " ").replace("\n", " "), quote=False)
+
+
+def _md_cell(value):
+    return _md_inline(value).replace("|", r"\|")
 
 SCHEMA_VERSION = 1
 
@@ -531,20 +540,20 @@ def render_package(proposal, facts):
     lines = ["# Proposal draft package (PRIVATE)", "",
              "Private case draft. Keep this file and the facts file in case storage,",
              "outside the public evidence store. Sharing needs a separate review.", ""]
-    lines.append("Opportunity: " + proposal["opportunity_id"])
+    lines.append("Opportunity: " + _md_inline(proposal["opportunity_id"]))
     if "funder_name" in proposal:
-        lines.append("Funder: " + proposal["funder_name"])
+        lines.append("Funder: " + _md_inline(proposal["funder_name"]))
     if "program" in proposal:
-        lines.append("Program: " + proposal["program"])
+        lines.append("Program: " + _md_inline(proposal["program"]))
     lines.append("")
 
     status = "PASS" if result["mechanical_checks_passed"] else "FAIL"
     review = result["substantive_review"]
     review_line = "Substantive review: " + review["status"]
     if review["reviewer"]:
-        review_line += " by " + review["reviewer"]
+        review_line += " by " + _md_inline(review["reviewer"])
     if review["reviewed_at"]:
-        review_line += " at " + review["reviewed_at"]
+        review_line += " at " + _md_inline(review["reviewed_at"])
     review_line += "."
     lines.extend(["## Check status", "",
                   "Mechanical checks: " + status + " (" + str(len(result["blockers"])) + " blockers).",
@@ -557,8 +566,8 @@ def render_package(proposal, facts):
                   "substantive agent or human review.", ""])
 
     if "project" in proposal:
-        lines.extend(["## Project", "", "Title: " + proposal["project"]["title"], "",
-                      proposal["project"]["summary"], ""])
+        lines.extend(["## Project", "", "Title: " + _md_inline(proposal["project"]["title"]), "",
+                      html.escape(proposal["project"]["summary"], quote=False), ""])
 
     lines.extend(["## Draft answers", ""])
     reports = {entry["question_id"]: entry for entry in result["answers"]}
@@ -566,31 +575,31 @@ def render_package(proposal, facts):
     for qid, question in questions.items():
         report = reports[qid]
         limit = "no limit" if report["max_words"] is None else str(report["max_words"]) + " words"
-        lines.extend(["### " + qid + " (" + str(report["words"]) + " words; limit " + limit + ")", "",
-                      "Prompt: " + question["prompt"], ""])
+        lines.extend(["### " + _md_inline(qid) + " (" + str(report["words"]) + " words; limit " + limit + ")", "",
+                      "Prompt: " + _md_inline(question["prompt"]), ""])
         answer = next((a for a in proposal["answers"] if a["question_id"] == qid), None)
         if answer is None or not answer["text"].strip():
             lines.extend(["No draft text supplied.", ""])
         else:
-            lines.extend([answer["text"], ""])
+            lines.extend([html.escape(answer["text"], quote=False), ""])
         if report["fact_refs"]:
             lines.append("Cited facts:")
             for ref in report["fact_refs"]:
                 entry = known.get(ref)
                 if entry is None:
-                    lines.append("- " + ref + " (unknown fact; resolve before sharing)")
+                    lines.append("- " + _md_inline(ref) + " (unknown fact; resolve before sharing)")
                 else:
-                    lines.append("- " + ref + " (" + entry["kind"] + ", " + entry["visibility"] + ")")
+                    lines.append("- " + _md_inline(ref) + " (" + entry["kind"] + ", " + entry["visibility"] + ")")
             lines.append("")
         else:
             lines.extend(["Cited facts: none listed.", ""])
 
     budget = result["budget"]
-    lines.extend(["## Budget (USD)", "", proposal["budget"]["use_of_funds"], "",
+    lines.extend(["## Budget (USD)", "", html.escape(proposal["budget"]["use_of_funds"], quote=False), "",
                   "| Line | Category | Source | Amount |", "|---|---|---|---|"])
     for line in proposal["budget"]["lines"]:
-        lines.append("| " + line["id"] + ": " + line["label"] + " | " + line["category"] + " | "
-                     + line["funding_source"] + " | " + line["amount"] + " |")
+        lines.append("| " + _md_cell(line["id"]) + ": " + _md_cell(line["label"]) + " | " + _md_cell(line["category"]) + " | "
+                     + _md_cell(line["funding_source"]) + " | " + _md_cell(line["amount"]) + " |")
     lines.extend(["",
                   "Grant lines sum: " + budget["grant_lines_sum"] + "; total requested: " + budget["total_requested"] + ".",
                   "All lines sum: " + budget["all_lines_sum"]
@@ -602,14 +611,14 @@ def render_package(proposal, facts):
         states = {entry["id"]: entry for entry in result["attachments"]}
         for item in proposal["attachments_required"]:
             state = states[item["id"]]["state"]
-            lines.append("- " + item["id"] + " (" + ("required" if item["required"] else "optional")
-                         + ", " + state + "): " + item["description"])
+            lines.append("- " + _md_inline(item["id"]) + " (" + ("required" if item["required"] else "optional")
+                         + ", " + state + "): " + _md_inline(item["description"]))
         lines.append("")
 
     if "rubric" in proposal and proposal["rubric"]:
         lines.extend(["## Funder rubric (scoring stays human review)", ""])
         for item in proposal["rubric"]:
-            lines.append("- " + item["id"] + ": " + item["description"])
+            lines.append("- " + _md_inline(item["id"]) + ": " + _md_inline(item["description"]))
         lines.append("")
 
     shared = result["shared_evidence"]
@@ -620,11 +629,11 @@ def render_package(proposal, facts):
         for fid in shared["requested"]:
             entry = known.get(fid)
             if entry is None:
-                lines.append("- " + fid + ": unknown fact; withheld.")
+                lines.append("- " + _md_inline(fid) + ": unknown fact; withheld.")
             elif entry["visibility"] != "shareable":
-                lines.append("- " + fid + ": PRIVATE; withheld from shared evidence.")
+                lines.append("- " + _md_inline(fid) + ": PRIVATE; withheld from shared evidence.")
             else:
-                lines.append("- " + fid + " (" + entry["kind"] + "): " + entry["statement"])
+                lines.append("- " + _md_inline(fid) + " (" + entry["kind"] + "): " + _md_inline(entry["statement"]))
         lines.append("")
 
     lines.extend(["## Cited facts appendix (private)", ""])
@@ -640,7 +649,7 @@ def render_package(proposal, facts):
             continue
         for ref in cited:
             entry = known[ref]
-            lines.append("- " + ref + " (" + entry["visibility"] + "): " + entry["statement"])
+            lines.append("- " + _md_inline(ref) + " (" + entry["visibility"] + "): " + _md_inline(entry["statement"]))
         lines.append("")
 
     lines.extend(["## Blockers", ""])
@@ -648,7 +657,7 @@ def render_package(proposal, facts):
         lines.extend(["None. Mechanical checks passed; substantive review still applies.", ""])
     else:
         for blocker in result["blockers"]:
-            lines.append("- " + blocker)
+            lines.append("- " + _md_inline(blocker))
         lines.append("")
 
     lines.extend(["## Manual review flags", ""])
@@ -658,7 +667,7 @@ def render_package(proposal, facts):
         lines.extend(["Advisory only; confirm the context and support.",
                       "These do not change mechanical checks.", ""])
         for warning in result["warnings"]:
-            lines.append("- " + warning)
+            lines.append("- " + _md_inline(warning))
         lines.append("")
 
     lines.extend(["## Limitations", "", LIMITATION, ""])

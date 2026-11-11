@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Security fixes apply to the latest released version (`0.3.0`) on `main`.
+Security fixes apply to the latest released version (`0.3.x`, currently `0.3.3`) on `main`.
 
 ## Security Design
 

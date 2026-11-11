@@ -1,10 +1,35 @@
 """Small, dependency-free public evidence store and source planner."""
 import hashlib
+import html
 import json
+from pathlib import Path
 import re
 import sqlite3
 from datetime import datetime, timezone, timedelta
 from urllib.parse import urlsplit, parse_qsl
+
+_MACOS_SYSTEM_SYMLINKS = {
+    Path("/var"),
+    Path("/tmp"),
+    Path("/etc"),
+    Path("/private/var"),
+    Path("/private/tmp"),
+    Path("/private/etc"),
+}
+
+
+def refuse_symlink(path, error_cls=ValueError, message="Symlink path refused."):
+    target = Path(path)
+    if target.is_symlink():
+        raise error_cls(message)
+    for parent in target.parents:
+        if parent.is_symlink() and parent not in _MACOS_SYSTEM_SYMLINKS:
+            raise error_cls(message)
+    return target
+
+
+def _md_inline(value):
+    return html.escape(str(value).replace("\r", " ").replace("\n", " "), quote=False)
 
 
 def now():
@@ -112,6 +137,8 @@ def normalize(record):
 
 class Store:
     def __init__(self, path):
+        if isinstance(path, (str, Path)) and str(path) != ":memory:" and not str(path).startswith("file::memory:"):
+            refuse_symlink(path, ValueError, "Database path cannot be a symlink")
         self.db = sqlite3.connect(path)
         version = self.db.execute("PRAGMA user_version").fetchone()[0]
         if version not in (0, 2):
@@ -214,8 +241,12 @@ def values(value):
 
 
 def load_registry(path):
-    with open(path, encoding="utf-8-sig") as handle:
-        payload = json.load(handle)
+    target = refuse_symlink(path, ValueError, "Registry path cannot be a symlink")
+    with target.open("rb") as handle:
+        raw = handle.read(10_000_001)
+    if len(raw) > 10_000_000:
+        raise ValueError("Registry file exceeds 10 MB limit")
+    payload = json.loads(raw.decode("utf-8-sig"))
     sources = payload if isinstance(payload, list) else payload["sources"]
     ids = [s["id"] for s in sources]
     if len(ids) != len(set(ids)):
@@ -289,14 +320,14 @@ def plan(sources, jurisdiction=None, applicant_type=None, purpose=None):
 def report(packet):
     lines = ["# Public grant evidence report", "", "Discovery evidence only. Eligibility is unassessed; source coverage is not exhaustive.", ""]
     for run in packet.get("runs", []):
-        lines.append(f"- Source {run['source_id']}: complete={run.get('complete', False)}; fetched {run['fetched_at']}; errors={len(run.get('errors', []))}")
+        lines.append(f"- Source {_md_inline(run['source_id'])}: complete={run.get('complete', False)}; fetched {_md_inline(run['fetched_at'])}; errors={len(run.get('errors', []))}")
     for record in packet["records"]:
-        title = record["title"].replace("\n", " ")
-        lines.extend(["", "## " + title, "", f"- Type: {record['record_type']}; observed status: {record['status']}", f"- Source: {record['url']}", f"- Retrieved: {record['retrieved_at']}", f"- Identity: {record['source_id']} / {record['program_id']} / {record['cycle_id']}", "- Eligibility: unassessed; inspect governing notice and amendments."])
+        title = _md_inline(record["title"])
+        lines.extend(["", "## " + title, "", f"- Type: {_md_inline(record['record_type'])}; observed status: {_md_inline(record['status'])}", f"- Source: {_md_inline(record['url'])}", f"- Retrieved: {_md_inline(record['retrieved_at'])}", f"- Identity: {_md_inline(record['source_id'])} / {_md_inline(record['program_id'])} / {_md_inline(record['cycle_id'])}", "- Eligibility: unassessed; inspect governing notice and amendments."])
         metadata = record.get("metadata", {})
-        lines.extend([f"- Authority: {metadata.get('authority', 'unspecified; verify upstream source')}", f"- Funding instrument (raw): {canonical(metadata.get('instrument_raw'))}", f"- Confirmed grant instrument: {metadata.get('is_confirmed_grant', 'unknown')}"])
+        lines.extend([f"- Authority: {_md_inline(metadata.get('authority', 'unspecified; verify upstream source'))}", f"- Funding instrument (raw): {_md_inline(canonical(metadata.get('instrument_raw')))}", f"- Confirmed grant instrument: {_md_inline(metadata.get('is_confirmed_grant', 'unknown'))}"])
         if "official_notice_url_available" in metadata:
             lines.extend([f"- Upstream notice URL supplied: {metadata['official_notice_url_available']} (authority remains unverified)", f"- Notice URL usable for HTTPS collection: {metadata.get('source_url_usable_for_collection', False)}", f"- Notice URL requires HTTPS resolution: {metadata.get('source_url_requires_https_resolution', False)}"])
         if isinstance(record.get("evidence"), dict) and record["evidence"].get("feed_url"):
-            lines.append("- Third-party feed: " + record["evidence"]["feed_url"])
+            lines.append("- Third-party feed: " + _md_inline(record["evidence"]["feed_url"]))
     return "\n".join(lines) + "\n"

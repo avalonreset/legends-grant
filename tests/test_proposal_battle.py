@@ -129,7 +129,7 @@ class ProposalBattleTests(unittest.TestCase):
         proposal_path, facts_path = self.case_files(proposal, facts)
         output = self.root / "check.json"
         code, _, error = self.invoke("proposal", "check", "--proposal", proposal_path,
-                                     "--facts", facts_path, "--output", output)
+                                     "--facts", facts_path, "--output", output, "--overwrite")
         self.assertEqual((code, error), (0, ""))
         return json.loads(output.read_text(encoding="utf-8"))
 
@@ -137,7 +137,7 @@ class ProposalBattleTests(unittest.TestCase):
         proposal_path, facts_path = self.case_files(proposal, facts)
         output = self.root / "draft.md"
         code, _, error = self.invoke("proposal", "render", "--proposal", proposal_path,
-                                     "--facts", facts_path, "--output", output)
+                                     "--facts", facts_path, "--output", output, "--overwrite")
         self.assertEqual((code, error), (0, ""))
         return output.read_text(encoding="utf-8")
 

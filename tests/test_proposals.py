@@ -535,6 +535,15 @@ class CLIProposalTests(unittest.TestCase):
         self.assertEqual(db.read_bytes(), b"sentinel-bytes")
         self.assertEqual(list(self.root.glob("*.db")), [db])
 
+    def test_render_package_escapes_markdown_tables_and_raw_html(self):
+        proposal = passing_proposal()
+        proposal["funder_name"] = "Funder <script>alert(1)</script>"
+        proposal["budget"]["lines"][0]["label"] = "Staff | Lead\nInjected<img src=x>"
+        draft = render_package(proposal, passing_facts())
+        self.assertIn("Funder &lt;script&gt;alert(1)&lt;/script&gt;", draft)
+        self.assertNotIn("<script>", draft)
+        self.assertIn(r"Staff \| Lead Injected&lt;img src=x&gt;", draft)
+
 
 class WorkedExampleTests(unittest.TestCase):
     def test_shipped_example_reports_only_honest_attachment_gaps(self):
