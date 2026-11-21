@@ -5,3 +5,5 @@ recursive-include skills *.md
 recursive-include states *.md
 recursive-include examples *.json *.md
 recursive-include grant_engine/data *.json
+recursive-include assets *.png *.webp *.json *.svg
+recursive-include scripts *.py

@@ -2,6 +2,12 @@
 
 All notable changes to `legends-grant` will be documented here.
 
+## 0.3.4 - 2026-11-21
+
+- Added `scripts/render_cards.py` and rendered the 7 outlined Legends Font `r1` SVG design cards under `assets/cards/r1/` (`slot-1-agent-handoff.svg`, `slot-2-three-pillars.svg`, `slot-3-plain-english-chains.svg`, `slot-4-grant-architecture.svg`, `slot-5-adhoc-vs-grant.svg`, `slot-7-message-avalon-reset.svg`, and `slot-collection-star-shrine.svg`), removing the duplicate `assets/collection-star-shrine.svg`.
+- Rewrote `README.md` to the evergreen CTO Legends architecture and operator documentation standard with collapsible `<details>` reference drawers, plain english operator chains, and two-chamber public SQLite ledger vs private fact review documentation.
+- Updated `scripts/check_release.py` and `MANIFEST.in` to enforce evergreen `README.md` checks and package `assets/cards/r1/*.svg` and `scripts/*.py` in source distributions.
+
 ## 0.3.3 - 2026-11-11
 
 - Enforced ancestor-chain symlink refusal (`refuse_symlink`) and explicit `--overwrite` protection (`open(..., "x")`) across all CLI file inputs, outputs, `--db`, `--registry`, and `collect-document` / `verify-documents` bundle directories and artifacts (`CWE-59`, `CWE-73`, EDR Law 2).
