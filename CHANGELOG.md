@@ -2,6 +2,10 @@
 
 All notable changes to `legends-grant` will be documented here.
 
+## 0.3.5 - 2026-11-22
+
+- Sync vendored `cto-legends` router skill pin (`69ddc4f68faa`), enforce LF line endings via `.gitattributes`, and standardize release artifact checksums.
+
 ## 0.3.4 - 2026-11-21
 
 - Added `scripts/render_cards.py` and rendered the 7 outlined Legends Font `r1` SVG design cards under `assets/cards/r1/` (`slot-1-agent-handoff.svg`, `slot-2-three-pillars.svg`, `slot-3-plain-english-chains.svg`, `slot-4-grant-architecture.svg`, `slot-5-adhoc-vs-grant.svg`, `slot-7-message-avalon-reset.svg`, and `slot-collection-star-shrine.svg`), removing the duplicate `assets/collection-star-shrine.svg`.
