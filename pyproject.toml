@@ -13,8 +13,9 @@ license = "MIT"
 license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"]
 
 [project.urls]
+Homepage = "https://cto-legends.com/modules/legends-grant"
+Documentation = "https://cto-legends.com/modules/legends-grant"
 Repository = "https://github.com/avalonreset/legends-grant"
-Documentation = "https://github.com/avalonreset/legends-grant/blob/main/docs/RUNTIME.md"
 Issues = "https://github.com/avalonreset/legends-grant/issues"
 Releases = "https://github.com/avalonreset/legends-grant/releases"
 
